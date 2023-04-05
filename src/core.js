@@ -1,7 +1,7 @@
 function add(a, b) {
 }
 
-function substract(a, b) {
+function subtract(a, b) {
 }
 
 function multiply(a, b) {
@@ -15,7 +15,7 @@ function pow(a, b) {
 
 export default {
     add: add,
-    sub: substract,
+    sub: subtract,
     mul: multiply,
     div: divide,
     pow: pow
