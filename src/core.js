@@ -4,8 +4,7 @@ function add(a, b) {
 function subtract(a, b) {
 }
 
-function multiply(a, b) {
-}
+function multiply (a, b) {return a*b};
 
 const divide = (a, b) => a/b;
 

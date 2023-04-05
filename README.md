@@ -13,5 +13,5 @@ Calculadora con funciones simples.
 npm run start
 ```
 ## Integrantes del Grupo 
-### _Martinez Ivan Ezequiel_ 
+### _Martinez Ivan Ezequiel_ - 30631
 ### Tomas Martinez - 30638
