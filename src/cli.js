@@ -6,7 +6,9 @@ const readline = createInterface({
     output: process.stdout,
 });
 
-const AVIABLE_FNS = [...Object.keys(core), 'exit'].join(', ')
+const allFnsNames = Object.keys(core);
+
+const AVIABLE_FNS = [...allFnsNames, 'exit'].join(', ')
 
 async function loop() {
     const fnName = await readline.question(`Ingrese función (${AVIABLE_FNS}): `)
@@ -14,6 +16,11 @@ async function loop() {
     if (fnName === "exit") {
         console.log("👋👋👋");
         return readline.close();
+    }
+
+    if(!allFnsNames.includes(fnName)){
+        console.log("Funcion invalida, intente nuevamente");
+        loop();
     }
 
     const fn = core[fnName];
