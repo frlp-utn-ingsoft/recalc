@@ -8,12 +8,17 @@ const readline = createInterface({
 
 const AVAILABLE_FNS = [...Object.keys(core), 'exit'].join(', ')
 
+
 async function loop() {
     const fnName = await readline.question(`Ingrese función (${AVAILABLE_FNS}): `)
 
     if (fnName === "exit") {
         console.log("👋👋👋");
         return readline.close();
+    }
+    if  (fnName != "add" && fnName !="sub" && fnName != "mul" && fnName != "div" && fnName != "pow" && fnName != "exit") {
+        console.log("Función erronea");
+        return loop();
     }
 
     const fn = core[fnName];
