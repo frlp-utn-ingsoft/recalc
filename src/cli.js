@@ -24,11 +24,15 @@ async function loop() {
     const fn = core[fnName];
 
     const firstNum = await readline.question("Ingrese el primer número: ")
-    const secondNum = await readline.question("Ingrese el segundo número: ")
-
-    const result = fn(Number(firstNum), Number(secondNum));
-
-    console.log(result);
+    if (fnName == "pow") {
+        const result = fn(Number(firstNum));
+        console.log(result);
+    }
+    else {
+        const secondNum = await readline.question("Ingrese el segundo número: ")
+        const result = fn(Number(firstNum), Number(secondNum));
+        console.log(result);
+    }
     loop();
 }
 
