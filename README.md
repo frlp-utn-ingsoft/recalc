@@ -13,3 +13,4 @@ Calculadora con funciones simples.
 npm run start
 ```
 Cangaro Ignacio Gabriel
+Dominguez Dolores
