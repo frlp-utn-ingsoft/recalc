@@ -12,3 +12,4 @@ Calculadora con funciones simples.
 # iniciar calculadora
 npm run start
 ```
+Cangaro Ignacio Gabriel
