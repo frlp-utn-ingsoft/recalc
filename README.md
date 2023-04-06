@@ -12,5 +12,6 @@ Calculadora con funciones simples.
 # iniciar calculadora
 npm run start
 ```
-Cangaro Ignacio Gabriel
-Dominguez Dolores
+Cangaro Ignacio Gabriel,
+Dominguez Dolores,
+Kral Franco
