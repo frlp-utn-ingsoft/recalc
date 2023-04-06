@@ -8,6 +8,12 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
+    if (b===0){
+        return "Math Error"
+    }
+    else{
+        return a/b
+    }
 }
 
 function pow(a, b) {
