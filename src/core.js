@@ -8,12 +8,8 @@ function multiply (a, b) {return a*b};
 
 const divide = (a, b) => a/b;
 
-function pow(a, b) {
-    let result = a;
-    for (let i = 1; i<b;i++){
-        result = result * a;
-    }
-    return result;
+function pow(a) {
+    return a*a;
 }
 
 export default {
