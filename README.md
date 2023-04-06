@@ -12,4 +12,4 @@ Calculadora con funciones simples.
 # iniciar calculadora
 npm run start
 ```
-Hola! Soy el integrante de la Mano Manuel Agustín
+de la Mano Manuel Agustín
