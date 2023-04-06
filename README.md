@@ -13,9 +13,9 @@ Calculadora con funciones simples.
 npm run start
 ```
 
-#Lista de integrantes del grupo
+##Lista de integrantes del grupo
 
 - Gomez D'Addario, Agustin
 - de la Mano, Manuel Agustín
 - Mijael Ben, Ulises Jose
-
+- Lorenzo, Nahuel Emiliano
