@@ -1,4 +1,5 @@
 function add(a, b) {
+    return a + b;
 }
 
 function subtract(a, b) {
@@ -11,6 +12,7 @@ function divide(a, b) {
 }
 
 function pow(a, b) {
+    return Math.pow(a,b)
 }
 
 export default {
