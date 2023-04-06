@@ -15,3 +15,5 @@ npm run start
 ## Integrantes
 
 - Nicolas Morales
+
+- Tomas Novelino
