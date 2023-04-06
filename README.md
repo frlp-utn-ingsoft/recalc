@@ -12,3 +12,6 @@ Calculadora con funciones simples.
 # iniciar calculadora
 npm run start
 ```
+#Lista de integrantes del grupo
+
+Gomez D'Addario Agustin
