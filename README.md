@@ -9,6 +9,12 @@ Calculadora con funciones simples.
 ## Comandos
 
 ```bash
+
 # iniciar calculadora
 npm run start
 ```
+
+# Integrantes
+- Cintia Valero
+-
+
