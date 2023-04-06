@@ -10,12 +10,15 @@ const AVAILABLE_FNS = [...Object.keys(core), 'exit'].join(', ')
 
 async function loop() {
     const fnName = await readline.question(`Ingrese función (${AVAILABLE_FNS}): `)
-
+ 
     if (fnName === "exit") {
         console.log("👋👋👋");
         return readline.close();
     }
-
+    else if(fnName!=="add" && fnName!=="sub" && fnName!=="mul" && fnName!=="div" && fnName!=="pow") {
+        console.log("La funcion ingresada no esta disponible");
+        loop();
+    }
     const fn = core[fnName];
 
     const firstNum = await readline.question("Ingrese el primer número: ")
