@@ -17,3 +17,5 @@ npm run start
 - Nicolas Morales
 
 - Tomas Novelino
+
+- Bautista Basilio
