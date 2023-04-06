@@ -2,6 +2,9 @@
 
 Calculadora con funciones simples.
 
+#Nombres integrantes:
+- Lorenzo Nahuel Emiliano
+
 ## Dependencias
 
 - node > 16
