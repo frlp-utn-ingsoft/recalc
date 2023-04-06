@@ -2,9 +2,6 @@
 
 Calculadora con funciones simples.
 
-#Nombres integrantes:
-- Lorenzo Nahuel Emiliano
-
 ## Dependencias
 
 - node > 16
@@ -15,3 +12,5 @@ Calculadora con funciones simples.
 # iniciar calculadora
 npm run start
 ```
+## Nombre Integrantes:
+- Lorenzo, Nahuel Emiliano
