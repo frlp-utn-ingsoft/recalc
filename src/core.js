@@ -11,6 +11,11 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
+    if ( b != 0 ){
+        return a/b;
+    } else {
+        return "Error: Division por cero";
+    }
 }
 
 function pow(a, b) {

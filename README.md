@@ -19,3 +19,6 @@ npm run start
 - Tomas Novelino
 
 - Bautista Basilio
+
+- Franco Borsella
+
