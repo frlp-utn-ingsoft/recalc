@@ -10,7 +10,9 @@ function multiply(a, b) {
 function divide(a, b) {
 }
 
-function pow(a, b) {
+function pow(a) {
+    let resul=parseInt(a**2);
+    return resul;
 }
 
 export default {
