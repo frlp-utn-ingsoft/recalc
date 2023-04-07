@@ -4,6 +4,7 @@ Calculadora con funciones simples.
 
 ## Integrantes
 
+- Enzo Defranco
 - Santiago Di Camillo
 - Simón Koenig
 - Gaspar Salomon
