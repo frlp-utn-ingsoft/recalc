@@ -1,10 +1,10 @@
-# Integrantes
-
-- Santiago Di Camillo
-
 # ReCalc
 
 Calculadora con funciones simples.
+
+## Integrantes
+
+- Santiago Di Camillo
 
 ## Dependencias
 
