@@ -9,6 +9,8 @@ function subtract(a, b) {
 }
 
 function multiply(a, b) {
+    let resul=parseInt(a*b);
+    return resul;
 }
 
 function divide(a, b) {
