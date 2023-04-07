@@ -18,7 +18,7 @@ function divide(a, b) {
     return resul;
 }
 
-function pow(a) {
+function pow(a) { // Resuelvo bug de funcion pow
     let resul=parseInt(a**2);
     return resul;
 }
