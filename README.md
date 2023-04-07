@@ -6,6 +6,7 @@ Calculadora con funciones simples.
 
 - Santiago Di Camillo
 - Simón Koenig
+- Gaspar Salomon
 
 ## Dependencias
 
