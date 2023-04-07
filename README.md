@@ -5,6 +5,7 @@ Calculadora con funciones simples.
 ## Integrantes
 
 - Santiago Di Camillo
+- Simón Koenig
 
 ## Dependencias
 
