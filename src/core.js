@@ -12,6 +12,8 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
+    let resul=(a/b);
+    return resul;
 }
 
 function pow(a) {
