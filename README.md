@@ -2,6 +2,9 @@
 
 Calculadora con funciones simples.
 
+## Integrantes:
+Russo, Matias Ruben
+
 ## Dependencias
 
 - node > 16
