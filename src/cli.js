@@ -7,17 +7,19 @@ const readline = createInterface({
     output: process.stdout,
 });
 
-const AVAILABLE_FNS = [...Object.keys(core), 'exit'].join(', ')
+const AVAILABLE_FNS = [...Object.keys(core), 'exit'].join(',')
 
 async function loop() {
-    const fnName = await readline.question(`Ingrese función (${AVAILABLE_FNS}): `)
-
-    if(AVAILABLE_FNS.includes(fnName)){
+    var fnName = await readline.question(`Ingrese función (${AVAILABLE_FNS}): `)
+    
+    const VALIDATION_ARRAY = AVAILABLE_FNS.split(",")
+    if(VALIDATION_ARRAY.includes(fnName)){
         if (fnName === "exit") {
             console.log("👋👋👋");
             return readline.close();
         }
 
+        
         const fn = core[fnName];
         const regex = /[a-z]/
         if(fnName !=='pow'){
