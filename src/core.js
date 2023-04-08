@@ -22,8 +22,8 @@ function divide(a, b) {
     }
 }
 
-function pow(a, b) {
-    return Math.pow(a,b)
+function pow(a) {
+    return a*a
 }
 
 export default {

@@ -19,14 +19,21 @@ async function loop() {
         console.log("La funcion ingresada no esta disponible");
         loop();
     }
+
     const fn = core[fnName];
 
-    const firstNum = await readline.question("Ingrese el primer número: ")
-    const secondNum = await readline.question("Ingrese el primer número: ")
+    let result
+    if (fnName === "pow") {
+        const num = await readline.question("Ingrese el número: ")
+        result = fn(Number(num))
+    }
+    else {
+        const firstNum = await readline.question("Ingrese el primer número: ")
+        const secondNum = await readline.question("Ingrese el primer número: ")
+        result = fn(Number(firstNum), Number(secondNum));
+    }
 
-    const result = fn(Number(firstNum), Number(secondNum));
-
-    console.log(result);
+    console.log(result)
     loop();
 }
 
