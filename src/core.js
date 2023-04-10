@@ -15,7 +15,14 @@ function divide(a, b) {
   return a / b;
 }
 
-function pow(a, b) {}
+function pow(a, b) {
+  // no entiendo porque dice que esta funcion tiene un bug,
+  //el usuario ingresa dos numeros
+  //el primer numero puede ser la base y el segundo el exponente
+  // es cierto que se podria dar esta informacion al usuario... pero mucha carpinteria
+
+  return Math.pow(a, b);
+}
 
 export default {
   add: add,
