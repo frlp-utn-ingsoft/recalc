@@ -3,7 +3,9 @@
 Calculadora con funciones simples.
 
 ## Integrantes:
+
 Russo, Matias Ruben
+Salani, Pablo
 
 ## Dependencias
 
