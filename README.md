@@ -6,6 +6,7 @@ Calculadora con funciones simples.
 
 Russo, Matias Ruben
 Salani, Pablo
+Maldonado, Sergio Adrian
 
 ## Dependencias
 
