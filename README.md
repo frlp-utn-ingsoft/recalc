@@ -12,7 +12,9 @@ Calculadora con funciones simples.
 # iniciar calculadora
 npm run start
 ```
+
 # Integrantes:
 
 Miño Milagros
 Torres Martín
+Aguirre Fidel
