@@ -18,3 +18,4 @@ npm run start
 Miño Milagros
 Torres Martín
 Aguirre Fidel
+Josue Sosa
