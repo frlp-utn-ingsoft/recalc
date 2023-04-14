@@ -16,6 +16,11 @@ async function loop() {
         return readline.close();
     }
 
+    if (!AVAILABLE_FNS.includes(fnName)){
+        console.log(`La funcion "${fnName}" no se encuentra`);
+        return loop();    
+    }
+
     const fn = core[fnName];
 
     const firstNum = await readline.question("Ingrese el primer número: ")
