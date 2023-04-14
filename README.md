@@ -15,3 +15,4 @@ npm run start
 # Integrantes:
 
 Miño Milagros
+Torres Martín
