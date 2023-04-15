@@ -24,7 +24,7 @@ async function loop() {
     const fn = core[fnName];
 
     const firstNum = await readline.question("Ingrese el primer número: ")
-    const secondNum = await readline.question("Ingrese el primer número: ")
+    const secondNum = fnName != "pow" ? await readline.question("Ingrese el segundo número: ") : ""
 
     const result = fn(Number(firstNum), Number(secondNum));
 

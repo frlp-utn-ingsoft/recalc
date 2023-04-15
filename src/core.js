@@ -18,7 +18,8 @@ function divide(a, b) {
     }
 }
 
-function pow(a, b) {
+function pow(a) {
+    return a**a;
 }
 
 export default {
