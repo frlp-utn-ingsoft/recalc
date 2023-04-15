@@ -19,7 +19,7 @@ function divide(a, b) {
 }
 
 function pow(a) {
-    return a**a;
+    return a**2;
 }
 
 export default {
