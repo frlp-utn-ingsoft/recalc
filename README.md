@@ -15,7 +15,7 @@ npm run start
 
 # Integrantes:
 
-Miño Milagros
-Torres Martín
-Aguirre Fidel
-Josue Sosa
+- Aguirre Fidel
+- Miño Milagros
+- Sosa Josue
+- Torres Martín
