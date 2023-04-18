@@ -11,6 +11,10 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
+	if (b === 0) {
+		//se verifica que el valor de "b" es 0
+		throw new Error("Error: No se puede dividir por 0,");
+	}
 	return a / b;
 }
 
