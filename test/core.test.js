@@ -1,6 +1,6 @@
 import core from '../src/core.js'
 
-describe('Add', () => {
+describe('Subtract', () => {
     test('Deberia 2 - 2 = 0', () => {
         expect(core.sub(2, 2)).toBe(0); 
     })
