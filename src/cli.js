@@ -8,10 +8,10 @@ const readline = createInterface({
 
 const allFnsNames = Object.keys(core);
 
-const AVIABLE_FNS = [...allFnsNames, 'exit'].join(', ')
+const AVAILABLE_FNS= [...allFnsNames, 'exit'].join(', ')
 
 async function loop() {
-    const fnName = await readline.question(`Ingrese función (${AVIABLE_FNS}): `)
+    const fnName = await readline.question(`Ingrese función (${AVAILABLE_FNS}): `)
 
     if (fnName === "exit") {
         console.log("👋👋👋");
