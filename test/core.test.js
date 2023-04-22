@@ -1,5 +1,15 @@
 import core from '../src/core.js'
 
+describe('Add', () => {
+    test('Deberia 2 + 6 = 8', () => {
+        expect(core.add(2, 6)).toBe(8);
+    })
+
+    test('Deberia 150 + 40 = 190', () => {
+        expect(core.add(150, 40)).toBe(190);
+    })
+})
+
 describe('Subtract', () => {
     test('Deberia 2 - 2 = 0', () => {
         expect(core.sub(2, 2)).toBe(0);
