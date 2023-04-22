@@ -12,6 +12,7 @@ function divide(a, b) {
 }
 
 function pow(a, b) {
+    return Math.pow(a, b);
 }
 
 export default {
