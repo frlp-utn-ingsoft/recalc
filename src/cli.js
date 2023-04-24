@@ -23,7 +23,6 @@ async function loop() {
     
 
     const fn = core[fnName];
-<<<<<<< HEAD
     
     if(fnName == "pow"){
 	const num = await readline.question("Ingrese la base a elevar: ")
@@ -37,21 +36,6 @@ async function loop() {
     	var result = fn(Number(firstNum), Number(secondNum));	
 	}
 
-=======
-
-    if(fnName == "pow"){
-        const num = await readline.question("Ingrese la base a elevar: ")
-        
-        var result = fn(Number(num))
-        }
-        else{
-        const firstNum = await readline.question("Ingrese el primer número: ")
-            const secondNum = await readline.question("Ingrese el segundo número: ")
-    
-            var result = fn(Number(firstNum), Number(secondNum));	
-        }
-        
->>>>>>> 48598210a207b6c81dd001a387af73457b1fe2c9
     console.log(result);
     loop();
 }
