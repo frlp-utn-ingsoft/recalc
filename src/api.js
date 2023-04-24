@@ -12,6 +12,10 @@ app.get('/', (req, res) => {
     res.send({ ok: true })
 })
 
+app.get('/', (req, mul) => {
+    res.send({ ok: true })
+})
+
 app.use("/api/v1", controllers);
 
 app.listen(PORT, () => {
