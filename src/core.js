@@ -3,6 +3,7 @@ function add(a, b) {
 }
 
 function subtract(a, b) {
+<<<<<<< HEAD
 	return a-b;
 }
 
@@ -20,6 +21,21 @@ function divide(a, b){
 
 function pow(a) {
 	return a*a; 
+=======
+    return a - b;
+}
+
+function multiply(a, b) {
+    return a*b;
+}
+
+function divide(a, b) {
+    return a/b;
+}
+
+function pow(a) {
+    return a*a;
+>>>>>>> 48598210a207b6c81dd001a387af73457b1fe2c9
 }
 
 export default {

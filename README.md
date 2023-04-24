@@ -18,4 +18,4 @@ npm run start
 - Cintia Valero
 - Matias Omar Batista
 - Juan Ignacio Etcheverry
-- Stuart Ián 
+- Stuart Ián
