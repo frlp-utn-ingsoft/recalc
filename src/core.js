@@ -3,23 +3,19 @@ function add(a, b) {
 }
 
 function subtract(a, b) {
-	return a-b;
+    return a - b;
 }
 
 function multiply(a, b) {
-	return a*b;
+    return a*b;
 }
 
-function divide(a, b){
-	if (a == 0 | b == 0) { 
-		return "No se puede dividir por 0";
-	} else {
-	return a/b;
-	}
+function divide(a, b) {
+    return a/b;
 }
 
 function pow(a) {
-	return a*a; 
+    return a*a;
 }
 
 export default {
