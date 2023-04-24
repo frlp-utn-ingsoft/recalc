@@ -16,5 +16,6 @@ npm run start
 
 # Integrantes
 - Cintia Valero
--
-
+- Matias Omar Batista
+- Juan Ignacio Etcheverry
+- Stuart Ián 
