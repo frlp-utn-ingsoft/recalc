@@ -47,9 +47,6 @@ describe('Multiply', () => {
 })
 
 describe('Pow', () => {
-  test('Los resultados de la potencia de exponente 2 son siempre números positivos cuando el número base es negativo', () => {
-    expect(core.pow(-2)).toBeGreaterThanOrEqual(0);
-    });
     
   test('Los resultados de la potencia de exponente 2 son siempre números positivos cuando el número base es positivo', () => {
     expect(core.pow(2)).toBeGreaterThanOrEqual(0);
@@ -88,6 +85,10 @@ describe('Pow', () => {
       const result=core.pow('casa')
     }).toThrow();
   });
+  
+  test('Los resultados de la potencia de exponente 2 son siempre números positivos cuando el número base es negativo', () => {
+    expect(core.pow(-2)).toBeGreaterThanOrEqual(0);
+    });
 })
 
 
