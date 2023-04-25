@@ -14,11 +14,7 @@ describe('Multiply', () => {
     test('debería multiplicar dos números positivos correctamente', () => {
         expect(core.mul(2, 2)).toBe(4);
       });
-        
-      test('debería multiplicar un número positivo y un número negativo correctamente', () => {
-        expect(core.mul(2, -2)).toBe(-4);
-      });
-      
+
       test('debería multiplicar dos números negativos correctamente', () => {
         expect(core.mul(-2, -2)).toBe(4);
       });
@@ -43,6 +39,10 @@ describe('Multiply', () => {
       
       test('la multiplicacíon debería cumplir con la propiedad de la identidad', () => {
         expect(core.mul(2,1)).toBe(2);
+      });
+
+      test('debería multiplicar un número positivo y un número negativo correctamente', () => {
+        expect(core.mul(2, -2)).toBe(-4);
       });
 })
 
