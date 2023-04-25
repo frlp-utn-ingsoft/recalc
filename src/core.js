@@ -19,6 +19,9 @@ function divide(a, b){
 }
 
 function pow(a) {
+	if(isNaN(a)){
+		throw Error("La base ingresada por parametro debe ser un numero");
+	}
 	return a*a; 
 }
 
