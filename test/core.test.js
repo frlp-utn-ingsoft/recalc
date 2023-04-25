@@ -9,3 +9,16 @@ describe('Subtract', () => {
         expect(core.sub(6, 4)).toBe(2); 
     })
 })
+
+describe('Multiply', () => {
+    test('Deberia 2 * 2 = 4', () => {
+        expect(core.mul(2, 2)).toBe(4); 
+    })
+
+    test('Deberia 5 * 3 = 15', () => {
+        expect(core.mul(5, 3)).toBe(15); 
+    })
+    test('Deberia 0 * 5 = 0', () => {
+        expect(core.mul(0, 5)).toBe(0); 
+    })
+})
