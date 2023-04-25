@@ -80,15 +80,15 @@ describe('Pow', () => {
     expect(core.pow(2) % 2).toBe(0);
   });
   
+  test('Los resultados de la potencia de exponente 2 son siempre números positivos cuando el número base es negativo', () => {
+    expect(core.pow(-2)).toBeGreaterThanOrEqual(0);
+  });
+
   test('Si la base ingresada por parametro no es un numero la funcion pow deberia volver error',()=>{
     expect(()=>{
       const result=core.pow('casa')
     }).toThrow();
   });
-  
-  test('Los resultados de la potencia de exponente 2 son siempre números positivos cuando el número base es negativo', () => {
-    expect(core.pow(-2)).toBeGreaterThanOrEqual(0);
-    });
 })
 
 
