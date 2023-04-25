@@ -10,6 +10,15 @@ describe('Subtract', () => {
     })
 })
 
+describe('Multiply', () => {
+    test('Deberia 3 * 3 = 9', () => {
+    expect(core.mul(3, 3)).toBe(9); 
+    })
+
+    test('Deberia 8 * -6 = -48', () => {
+        expect(core.mul(8, -6)).toBe(-48); 
+    })
+})
 
 describe('Add', () => {
     test('Deberia 2 + 5 = 7', () => {
@@ -42,5 +51,4 @@ describe('Pow', () => {
         expect(core.pow(12)).toBe(144); 
     })
 })
-
 
