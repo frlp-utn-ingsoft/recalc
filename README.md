@@ -12,3 +12,7 @@ Calculadora con funciones simples.
 # iniciar calculadora
 npm run start
 ```
+Cangaro Ignacio Gabriel,
+Dominguez Dolores,
+Kral Franco,
+Libano Santiago Matias

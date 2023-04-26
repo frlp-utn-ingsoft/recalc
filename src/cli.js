@@ -8,6 +8,7 @@ const readline = createInterface({
 
 const AVAILABLE_FNS = [...Object.keys(core), 'exit'].join(', ')
 
+
 async function loop() {
     const fnName = await readline.question(`Ingrese función (${AVAILABLE_FNS}): `)
 
@@ -15,15 +16,23 @@ async function loop() {
         console.log("👋👋👋");
         return readline.close();
     }
+    if  (fnName != "add" && fnName !="sub" && fnName != "mul" && fnName != "div" && fnName != "pow" && fnName != "exit") {
+        console.log("Función erronea");
+        return loop();
+    }
 
     const fn = core[fnName];
 
     const firstNum = await readline.question("Ingrese el primer número: ")
-    const secondNum = await readline.question("Ingrese el primer número: ")
-
-    const result = fn(Number(firstNum), Number(secondNum));
-
-    console.log(result);
+    if (fnName == "pow") {
+        const result = fn(Number(firstNum));
+        console.log(result);
+    }
+    else {
+        const secondNum = await readline.question("Ingrese el segundo número: ")
+        const result = fn(Number(firstNum), Number(secondNum));
+        console.log(result);
+    }
     loop();
 }
 
