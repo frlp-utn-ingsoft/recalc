@@ -9,6 +9,10 @@ describe('Subtract', () => {
     test('Deberia 6 - 4 = 2', () => {
         expect(core.sub(6, 4)).toBe(2); 
     });
+
+	test('Deberia 2 - 4 = Negativo', () => {
+		expect(core.sub(2, 4)).toBeLessThan(0);
+	});
 });
 
 //Test de Add
