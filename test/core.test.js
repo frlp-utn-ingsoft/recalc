@@ -12,9 +12,17 @@ describe('Subtract', () => {
 
 })
 
+
 describe('Suma', () => {
     test('Deberia 10 + 12 = 22', () => {
         expect(core.add(10, 12)).toBe(22); 
     })
 
 })
+
+describe('Divide', () => {
+    test('Deberia 2 / 2 = 1', () => {
+        expect(core.div(2, 2)).toBe(1); 
+    })
+})
+
