@@ -43,4 +43,29 @@ describe('Multiply', () => {
         expect(core.mul(-3, 4)).toBe(-12); 
     })
 })
+
+
+//Test de Potencia
+describe('Pow', () => {
+    test('Deberia 2 * 2 = 4', () => {
+        expect(core.pow(2)).toBe(4); 
+    })
+
+    test('Deberia 5 * 5 = 25', () => {
+        expect(core.pow(5)).toBe(25); 
+    })
+
+    test('Deberia 7 * 7 = 49', () => {
+        expect(core.pow(7)).toBe(49); 
+    })
+
+    test('Deberia 10 * 10 = 100', () => {
+        expect(core.pow(10)).toBe(100); 
+    })
+
+    test('Deberia 4 * 4 = 46', () => {
+        expect(core.pow(4)).toBe(16); 
+    })
+})
+
  dev
