@@ -9,3 +9,9 @@ describe('Subtract', () => {
         expect(core.sub(6, 4)).toBe(2); 
     })
 })
+
+describe('Divide', () => {
+    test('Deberia 2 / 2 = 1', () => {
+        expect(core.div(2, 2)).toBe(1); 
+    })
+})
