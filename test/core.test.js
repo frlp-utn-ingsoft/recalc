@@ -31,3 +31,10 @@ describe('Divide', () => {
         expect(core.div(2, 2)).toBe(1); 
     })
 })
+
+describe('Multiply', () => {
+    test('Deberia 2 * 2 = 4', () => {
+        expect(core.mul(2, 2)).toBe(4); 
+    })
+
+})
