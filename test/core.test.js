@@ -22,9 +22,6 @@ describe('Add', () => {
 		expect(core.add(6, 4)).toBe(10);
 	});
 });
-=======
-    })
-})
 
 //Test de Multiply
 describe('Multiply', () => {
