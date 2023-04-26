@@ -9,3 +9,9 @@ describe('Subtract', () => {
         expect(core.sub(6, 4)).toBe(2); 
     })
 })
+
+describe('Pow', () => {
+    test('Deberia 4 ** 2 = 16', () => {
+        expect(core.pow(4)).toBe(16); 
+    })
+})
