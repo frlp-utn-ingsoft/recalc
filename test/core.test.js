@@ -1,3 +1,4 @@
+import { DEFAULT_EXTENSIONS } from '@babel/core';
 import core from '../src/core.js'
 
 describe('Subtract', () => {
@@ -8,4 +9,12 @@ describe('Subtract', () => {
     test('Deberia 6 - 4 = 2', () => {
         expect(core.sub(6, 4)).toBe(2); 
     })
+
+})
+
+describe('Suma', () => {
+    test('Deberia 10 + 12 = 22', () => {
+        expect(core.add(10, 12)).toBe(22); 
+    })
+
 })
