@@ -26,6 +26,7 @@ describe('Add', () => {
     })
 })
 
+//Test de Multiply
 describe('Multiply', () => {
     test('Deberia 2 * 2 = 4', () => {
         expect(core.mul(2, 2)).toBe(4); 
