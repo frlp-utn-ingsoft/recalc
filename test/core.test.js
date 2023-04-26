@@ -35,5 +35,8 @@ describe('Multiply', () => {
     test('Deberia 0 * 5 = 0', () => {
         expect(core.mul(0, 5)).toBe(0); 
     })
+    test('Deberia -3 * 4 = -12', () => {
+        expect(core.mul(-3, 4)).toBe(-12); 
+    })
 })
  dev
