@@ -39,4 +39,18 @@ describe('Multiply', () => {
         expect(core.mul(-3, 4)).toBe(-12); 
     })
 })
- dev
+
+ //Test de Division
+ describe('Division', () => {
+    test('Deberia 2 / 2 = 1', () => {
+        expect(core.div(2,2)).toBe(1);
+    })
+
+    test ('Deberia 6 / 2 = 3', () => {
+        expect(core.div(6,2)).toBe(3);
+    })
+    test('Deberia 10 / 5 = 2', () => {
+        expect(core.div(10,5)).toBe(2);
+    })
+})
+dev
