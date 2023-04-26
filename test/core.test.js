@@ -20,9 +20,14 @@ describe('Suma', () => {
 
 })
 
+describe('Pow', () => {
+    test('Deberia 4 ** 2 = 16', () => {
+        expect(core.pow(4)).toBe(16); 
+    })
+})
+
 describe('Divide', () => {
     test('Deberia 2 / 2 = 1', () => {
         expect(core.div(2, 2)).toBe(1); 
     })
 })
-
