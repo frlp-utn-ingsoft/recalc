@@ -57,6 +57,9 @@ describe('Multiply', () => {
     test('Deberia 10 / 5 = 2', () => {
         expect(core.div(10,5)).toBe(2);
     })
+    test('Deberia lanzar un error al dividir por 0', () => {
+        expect(core.div(2,0)).toThrow('No se puede dividir por 0');
+    })
 })
 
 
