@@ -55,6 +55,8 @@ router.get("/div/:a/:b", async function(req, res) {
     } else {
         const result = core.div(a,b);
         return res.send({result});
+    }
+});
 
 router.get("/pow/:a/:b", async function (req, res) {
     const params = req.params;
