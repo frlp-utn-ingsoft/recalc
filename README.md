@@ -15,4 +15,4 @@ npm run start
 Cangaro Ignacio Gabriel,
 Dominguez Dolores,
 Kral Franco,
-Libano Santiago Matias
+Libano Santiago Matias.
