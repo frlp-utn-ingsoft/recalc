@@ -8,7 +8,6 @@ describe('Subtract', () => {
 
     test('Deberia 6 - 4 = 2', () => {
         expect(core.sub(6, 4)).toBe(2); 
- test_add
     });
 
 	test('Deberia 2 - 4 = Negativo', () => {
@@ -85,7 +84,7 @@ describe('Pow', () => {
     });
 
     test('Deberia 4 * 4 = 46', () => {
-        expect(core.pow(4)).toBe(16); 
+        expect(core.pow(4)).toBe(46); 
     });
 
 	test('Deberia dar como resultado un numero positivo', () => {
