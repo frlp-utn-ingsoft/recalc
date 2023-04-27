@@ -43,8 +43,8 @@ describe('Multiply', () => {
         expect(core.mul(-3, 4)).toBe(-12); 
     });
     test('Deberia lanzar error al intentar usar un parámetro que no es un número', () => {
-        expect(core.mul(2,A)).toThrow('Uno de los parámetros no es un número');
-    })
+        expect(() => core.mul('a', 2)).toThrow('Uno de los parámetros no es un número');
+    });
 });
 
 
