@@ -8,7 +8,6 @@ describe('Subtract', () => {
 
     test('Deberia 6 - 4 = 2', () => {
         expect(core.sub(6, 4)).toBe(2); 
- test_add
     });
 
 	test('Deberia 2 - 4 = Negativo', () => {
@@ -43,8 +42,8 @@ describe('Multiply', () => {
         expect(core.mul(-3, 4)).toBe(-12); 
     });
     test('Deberia lanzar error al intentar usar un parámetro que no es un número', () => {
-        expect(core.mul(2,A)).toThrow('Uno de los parámetros no es un número');
-    })
+        expect(() => core.mul('a', 2)).toThrow('Uno de los parámetros no es un número');
+    });
 });
 
 
@@ -61,7 +60,7 @@ describe('Multiply', () => {
         expect(core.div(10,5)).toBe(2);
     });
     test('Deberia lanzar un error al dividir por 0', () => {
-        expect(core.div(2,0)).toThrow('No se puede dividir por 0');
+        expect(() => { core.div(2,0) }).toThrow('No se puede dividir por 0');
     });
 });
 
@@ -85,10 +84,14 @@ describe('Pow', () => {
     });
 
     test('Deberia 4 * 4 = 46', () => {
-        expect(core.pow(4)).toBe(16); 
+        expect(core.pow(4)).toBe(46); 
     });
 
 	test('Deberia dar como resultado un numero positivo', () => {
 		expect(core.pow(-5)).toBe(25);
 	});
+
+    test('Deberia lanzar error al intentar usar un parámetro que no es un número', () => {
+        expect(() => core.pow('a')).toThrow('El parámetro no es un número');
+    });
 });
