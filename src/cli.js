@@ -34,8 +34,12 @@ async function loop() {
                 console.log('ERROR: Debe ingresar un NUMERO! \n')
                 loop()
             }
-            const result = fn(Number(firstNum), Number(secondNum))
-            console.log(result);
+            try{
+                const result = fn(Number(firstNum), Number(secondNum))
+                console.log(result);
+            } catch (e){
+                console.log(e);
+            }
         } else {
             const num = await readline.question("Ingrese el número: ");
             if (num.match(regex) !== null) {
