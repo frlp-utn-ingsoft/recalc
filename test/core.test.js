@@ -91,4 +91,30 @@ describe('Pow', () => {
   });
 })
 
+describe('Sum', () => {
+  test('Suma de dos números positivos: 2 + 2 tiene que ser 4', () => {
+    expect(core.sum(2, 2)).toBe(4);
+  });
 
+  test('Sumar de dos números negativos: -2 + -2 debería ser -4', () => {
+    expect(core.sum(-2, -2)).toBe(-4);
+  });
+
+  test('No se permiten valores no numéricos', () => {
+    expect(() => {
+      const result = core.sum("asd", 2);
+    }).toThrow();
+  });
+
+  test('Propiedad conmutativa: 2 + 3 = 3 + 2', () => {
+    expect(core.sum(2, 3)).toBe(core.sum(3, 2));
+  });
+
+  test('Propiedad inversa: 2 + -2 = 0 ', () => {
+    expect(core.sum(2, -2)).toBe(0);
+  });
+
+  test('Propiedad de la identidad: 2 + 0 = 2', () => {
+    expect(core.sum(2, 0)).toBe(2);
+  });
+});
