@@ -92,3 +92,36 @@ describe('Pow', () => {
 })
 
 
+describe('Divide', () => {
+  test('debería dividir dos números positivos correctamente', () => {
+    expect(core.divide(6, 2)).toBe(3);
+  });
+
+  test('debería dividir dos números negativos correctamente', () => {
+    expect(core.divide(-6, -2)).toBe(3);
+  });
+
+  test('debería arrojar un error cuando el divisor es cero', () => {
+    expect(() => {
+      const result = core.divide(10, 0);
+    }).toThrow();
+  });
+
+  test('no debería permitir ingresar como parámetro valores no numéricos', () => {
+    expect(() => {
+      const result = core.divide("asd", 2);
+    }).toThrow();
+  });
+
+  test('debería cumplir con la propiedad de la reciprocidad', () => {
+    expect(core.divide(2, 1/2)).toBe(4);
+  });
+
+  test('debería cumplir con la propiedad de la identidad', () => {
+    expect(core.divide(2, 1)).toBe(2);
+  });
+
+  test('debería dividir un número positivo y un número negativo correctamente', () => {
+    expect(core.divide(6, -2)).toBe(-3);
+  });
+});
