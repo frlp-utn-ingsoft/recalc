@@ -29,3 +29,15 @@ describe('Pow', () => {
         expect(core.pow(4, 6)).toBe(4096);
     })
 })
+
+describe('Multiply', () =>{
+    test('La multiplicacion por un numero negativo da como resultado un numero negativo', () =>{
+        expect(core.mul(4,-3)).toBeLessThan(0);
+    })
+
+    test('La multiplicacion por un numero negativo da como resultado un numero negativo', () =>{
+        expect(core.mul(-6,3)).toBeLessThan(0);
+    })
+}
+
+)
