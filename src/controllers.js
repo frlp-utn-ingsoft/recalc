@@ -1,5 +1,5 @@
 import express from 'express';
-import core from './core.js';
+import core from './core';
 
 const router = express.Router();
 
@@ -15,5 +15,6 @@ router.get("/sub/:a/:b", async function (req, res) {
         return res.send({ result });
     }
 });
+
 
 export default router;
