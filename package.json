@@ -1,7 +1,7 @@
 {
   "name": "src",
   "version": "1.1.0",
-  "description": "",
+  "description": "Calculadora con funciones simples.",
   "main": "src/cli.js",
   "scripts": {
     "test": "jest",
@@ -28,9 +28,14 @@
       [
         "@babel/preset-env",
         {
-          "targets": { "node": "current" }
+          "targets": {
+            "node": "current"
+          }
         }
       ]
     ]
+  },
+  "directories": {
+    "test": "test"
   }
 }
