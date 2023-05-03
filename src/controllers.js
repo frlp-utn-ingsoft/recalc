@@ -29,4 +29,17 @@ router.get('/add/:a/:b', async function(req, res) {
     }
 });
 
+router.get('/div/:a/:b', async function(req, res) {
+    const params = req.params;
+    const a = Number(params.a);
+    const b = Number(params.b);
+
+    if (isNaN(a) || isNaN(b) || b === 0) {
+        res.status(400).send('Los parámetros no son válidos para la división');
+    } else {
+        const result = a / b;
+        return res.send({ result });
+    }
+});
+
 export default router;
