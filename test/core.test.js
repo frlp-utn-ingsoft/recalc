@@ -10,6 +10,7 @@ describe('Subtract', () => {
     })
 })
 
+
 describe('Prueba de la función suma', () => {
 
   // Suma de numeros naturales
@@ -29,3 +30,27 @@ describe('Prueba de la función suma', () => {
 
 });
 
+
+describe('Prueba de la funcion division', () => {
+
+  //Division de numeros naturales
+  test("La division de 4 / 2 debe ser igual a 2", () => {
+    expect(core.div(4, 2)).toBe(2);
+  });
+  
+  //Division de un numero negativo y un numero natural
+  test("La division de -4 / 2 debe ser igual a -2", () => {
+    expect(core.div(-4, 2)).toBe(-2);
+  });
+
+  //Division de dos numeros negativos
+  test("La division de -4 / -2 debe ser igual a 2", () => {
+    expect(core.div(-4, -2)).toBe(2);
+  });
+  
+  //Division por cero
+  test("La division de un numero por cero, debe arrojar error", () => {
+    expect(() => core.div(4, 0)).toThrow("No se puede dividir por 0");
+  });
+
+})
