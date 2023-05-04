@@ -10,8 +10,11 @@ function multiply(a, b) {
     return a * b
 }
 
-function divide(a, b) {
-    return a / b
+
+function divide (a, b) {
+    if(b === 0)
+        throw "No se puede dividir entre 0!";
+    return a/b;
 }
 
 function pow(a) {
