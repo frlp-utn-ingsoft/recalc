@@ -19,6 +19,15 @@ router.get("/div/:a/:b", async function (req, res) {
     }
 });
 
+router.get("/mul/:a/:b", async function (req, res) {
+    try {
+        const params = getRequestParameters(req, res);
+        const result = core.mul(params.a, params.b);
+        return res.send({result})
+    } catch (e) {
+        res.status(400).send(e.message);
+    }
+});
 
 function getRequestParameters(req) {
     const a = Number(req.params.a);
