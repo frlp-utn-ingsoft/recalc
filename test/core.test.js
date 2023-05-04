@@ -20,5 +20,11 @@ describe('Div', () => {
         let a = Math.floor(Math.random() * 100);
         let b = 0;
         expect(() => core.div(a,b)).toThrow("No se puede dividir entre 0!"); 
+    })
+    
+    test("Should be true that a/b > a when  1 > b > 0  ", () => {
+        let a = Math.floor(Math.random() * 100);
+        let b = Math.random();
+        expect(core.div(a,b)).toBeGreaterThan(a); 
     }) 
 })
