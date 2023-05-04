@@ -15,4 +15,10 @@ describe('Div', () => {
         let b = Math.floor(Math.random() * 100);
         expect(core.div(a,b)).toBeLessThan(a);
     })    
+
+    test("Should throw 'No se puede dividir entre 0!' with b = 0", () => {
+        let a = Math.floor(Math.random() * 100);
+        let b = 0;
+        expect(() => core.div(a,b)).toThrow("No se puede dividir entre 0!"); 
+    }) 
 })
