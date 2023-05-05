@@ -30,4 +30,16 @@ describe('Add', () => {
         expect(core.add(a,b)).toBeLessThan(b);
         expect(core.add(a,b)).toBeLessThan(0);
     })
+
+    test('Should be true that c < 0 when |a| > b and a < 0', () => {
+        let a = -50;
+        let b = 30;
+        expect(core.add(a,b)).toBeLessThan(0);
+    })
+
+    test('Should be true that c > 0 when b > |a| and b > 0', () => {
+        let a = -30;
+        let b = 50;
+        expect(core.add(a,b)).toBeGreaterThan(0);
+    })
 })
