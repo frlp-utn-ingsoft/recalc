@@ -92,6 +92,15 @@ describe('Pow', () => {
 })
 
 
+
+describe('Divide', () => {
+  test('Deberia 6/0 = Error', () => {
+      expect(core.divide(6, 0)).toBe("No se puede dividir por 0"); 
+  })
+})
+
+
+
 describe('Sum', () => {
   test('Suma de dos números positivos: 2 + 2 tiene que ser 4', () => {
     expect(core.sum(2, 2)).toBe(4);
@@ -133,3 +142,4 @@ describe('Mock Multiplicacion', () => {
     expect(core.sum(2, 0)).toBe(2);
   });
 });
+
