@@ -9,3 +9,12 @@ describe('Subtract', () => {
         expect(core.sub(6, 4)).toBe(2); 
     })
 })
+
+describe('Multiply', () => {
+    test('mul 1 * 2 to equal 2', () => {
+        expect(core.mul(1, 2)).toBe(2);
+    })
+    
+})
+
+
