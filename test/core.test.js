@@ -37,6 +37,16 @@ describe('Sub', () => {
 })
 
 describe('Multiply', () =>{
+    test('Debería 2 * 3 = 6', () =>{
+        expect(core.mul(2,3)).toBe(6);
+    })
+
+    test('Debería 11 * 13 = 143', () =>{
+        expect(core.mul(11,13)).toBe(143);
+    })
+})
+
+describe('Multiply', () =>{
     test('La multiplicacion por un numero negativo da como resultado un numero negativo', () =>{
         expect(core.mul(4,-3)).toBeLessThan(0);
     })
