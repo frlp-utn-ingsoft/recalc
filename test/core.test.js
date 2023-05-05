@@ -10,7 +10,7 @@ describe('Subtract', () => {
     })
 
     test('Deberia 6 - 9 = -3', () => {
-      expect(core.sub(6, 9)).toBe(-2); 
+      expect(core.sub(6, 9)).toBe(-3); 
     })
 })
 
