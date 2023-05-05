@@ -92,3 +92,10 @@ describe('Pow', () => {
 })
 
 
+describe('Divide', () => {
+  test('Deberia 6/0 = Error', () => {
+      expect(core.divide(6, 0)).toBe("No se puede dividir por 0"); 
+  })
+})
+
+
