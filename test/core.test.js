@@ -91,6 +91,7 @@ describe('Pow', () => {
   });
 })
 
+
 describe('Sum', () => {
   test('Suma de dos números positivos: 2 + 2 tiene que ser 4', () => {
     expect(core.sum(2, 2)).toBe(4);
@@ -105,6 +106,20 @@ describe('Sum', () => {
       const result = core.sum("asd", 2);
     }).toThrow();
   });
+
+describe('Mock Multiplicacion', () => {
+  test('Deberia multiplicar 2 numeros', () => {
+
+    const mockMultiplicacion = jest.fn(core.mul);
+    const result = mockMultiplicacion(2, 3);
+
+    expect(mockMultiplicacion).toHaveBeenCalled();
+    expect(mockMultiplicacion).toHaveBeenCalledWith(2, 3);
+    expect(result).toBe(6);
+  });
+});
+
+
 
   test('Propiedad conmutativa: 2 + 3 = 3 + 2', () => {
     expect(core.sum(2, 3)).toBe(core.sum(3, 2));
