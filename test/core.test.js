@@ -91,4 +91,16 @@ describe('Pow', () => {
   });
 })
 
+describe('Mock Multiplicacion', () => {
+  test('Deberia multiplicar 2 numeros', () => {
+
+    const mockMultiplicacion = jest.fn(core.mul);
+    const result = mockMultiplicacion(2, 3);
+
+    expect(mockMultiplicacion).toHaveBeenCalled();
+    expect(mockMultiplicacion).toHaveBeenCalledWith(2, 3);
+    expect(result).toBe(6);
+  });
+});
+
 
