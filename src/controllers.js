@@ -36,7 +36,7 @@ router.get("/mul/:a/:b", async function (req, res) {
 router.get("/pow/:a", async function (req, res) {
     const a = Number(req.params.a);
     if (isNaN(a))
-        return res.status(400).send(e.message);
+        return res.status(400).send('El parametro debe ser un numero.');
     const result = core.pow(a);
     return res.send({result})
 });
