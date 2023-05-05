@@ -44,6 +44,4 @@ describe('Multiply', () =>{
     test('La multiplicacion por un numero negativo da como resultado un numero negativo', () =>{
         expect(core.mul(-6,3)).toBeLessThan(0);
     })
-}
-
-
+})
