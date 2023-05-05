@@ -28,6 +28,17 @@ router.get("/mul/:a/:b", async function (req, res) {
         res.status(400).send(e.message);
     }
 });
+router.get("/pow/:a", async function (req, res) {
+    try {
+        const a = Number(req.params.a);
+         if (isNaN(a))
+                throw new Error('El parametro debe ser un número. ');
+        const result = core.pow(a);
+        return res.send({result})
+    } catch (e) {
+        res.status(400).send(e.message);
+    }
+});
 
 function getRequestParameters(req) {
     const a = Number(req.params.a);
