@@ -35,3 +35,15 @@ describe('Sub', () => {
         expect(core.sub(5, 10)).toBeLessThan(0);
       });
 })
+
+describe('Multiply', () =>{
+    test('La multiplicacion por un numero negativo da como resultado un numero negativo', () =>{
+        expect(core.mul(4,-3)).toBeLessThan(0);
+    })
+
+    test('La multiplicacion por un numero negativo da como resultado un numero negativo', () =>{
+        expect(core.mul(-6,3)).toBeLessThan(0);
+    })
+}
+
+
