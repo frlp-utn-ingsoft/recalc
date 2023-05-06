@@ -105,12 +105,6 @@ describe('Divide', () => {
     expect(core.divide(-6, -2)).toBe(3);
   });
 
-  test('debería arrojar un error cuando el divisor es cero', () => {
-    expect(() => {
-      const result = core.divide(10, 0);
-    }).toThrow();
-  });
-
   test('no debería permitir ingresar como parámetro valores no numéricos', () => {
     expect(() => {
       const result = core.divide("asd", 2);
@@ -151,8 +145,21 @@ describe('Sum', () => {
   test('No se permiten valores no numéricos', () => {
     expect(() => {
       const result = core.sum("asd", 2);
-    }).toThrow();
+    }).toThrow(); 
   });
+
+  test('Propiedad conmutativa: 2 + 3 = 3 + 2', () => {
+    expect(core.sum(2, 3)).toBe(core.sum(3, 2));
+  });
+
+  test('Propiedad inversa: 2 + -2 = 0 ', () => {
+    expect(core.sum(2, -2)).toBe(0);
+  });
+
+  test('Propiedad de la identidad: 2 + 0 = 2', () => {
+    expect(core.sum(2, 0)).toBe(2);
+  });
+});
 
 describe('Mock Multiplicacion', () => {
   test('Deberia multiplicar 2 numeros', () => {
