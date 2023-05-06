@@ -96,6 +96,34 @@ describe('Pow', () => {
 })
 
 
+describe('Divide', () => {
+  test('debería dividir dos números positivos correctamente', () => {
+    expect(core.divide(6, 2)).toBe(3);
+  });
+
+  test('debería dividir dos números negativos correctamente', () => {
+    expect(core.divide(-6, -2)).toBe(3);
+  });
+
+  test('no debería permitir ingresar como parámetro valores no numéricos', () => {
+    expect(() => {
+      const result = core.divide("asd", 2);
+    }).toThrow();
+  });
+
+  test('debería cumplir con la propiedad de la reciprocidad', () => {
+    expect(core.divide(2, 1/2)).toBe(4);
+  });
+
+  test('debería cumplir con la propiedad de la identidad', () => {
+    expect(core.divide(2, 1)).toBe(2);
+  });
+
+  test('debería dividir un número positivo y un número negativo correctamente', () => {
+    expect(core.divide(6, -2)).toBe(-3);
+  });
+});
+
 
 describe('Divide', () => {
   test('Deberia 6/0 = Error', () => {
@@ -117,22 +145,8 @@ describe('Sum', () => {
   test('No se permiten valores no numéricos', () => {
     expect(() => {
       const result = core.sum("asd", 2);
-    }).toThrow();
+    }).toThrow(); 
   });
-
-describe('Mock Multiplicacion', () => {
-  test('Deberia multiplicar 2 numeros', () => {
-
-    const mockMultiplicacion = jest.fn(core.mul);
-    const result = mockMultiplicacion(2, 3);
-
-    expect(mockMultiplicacion).toHaveBeenCalled();
-    expect(mockMultiplicacion).toHaveBeenCalledWith(2, 3);
-    expect(result).toBe(6);
-  });
-});
-
-
 
   test('Propiedad conmutativa: 2 + 3 = 3 + 2', () => {
     expect(core.sum(2, 3)).toBe(core.sum(3, 2));
@@ -147,3 +161,14 @@ describe('Mock Multiplicacion', () => {
   });
 });
 
+describe('Mock Multiplicacion', () => {
+  test('Deberia multiplicar 2 numeros', () => {
+
+    const mockMultiplicacion = jest.fn(core.mul);
+    const result = mockMultiplicacion(2, 3);
+
+    expect(mockMultiplicacion).toHaveBeenCalled();
+    expect(mockMultiplicacion).toHaveBeenCalledWith(2, 3);
+    expect(result).toBe(6);
+  });
+});
