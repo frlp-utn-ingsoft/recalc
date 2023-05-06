@@ -29,3 +29,29 @@ describe('Pow', () => {
         expect(core.pow(4, 6)).toBe(4096);
     })
 })
+
+describe('Sub', () => {
+    test('La resta de un número menor a uno mayor da como resultado un número negativo', () => {
+        expect(core.sub(5, 10)).toBeLessThan(0);
+      });
+})
+
+describe('Multiply', () =>{
+    test('Debería 2 * 3 = 6', () =>{
+        expect(core.mul(2,3)).toBe(6);
+    })
+
+    test('Debería 11 * 13 = 143', () =>{
+        expect(core.mul(11,13)).toBe(143);
+    })
+})
+
+describe('Multiply', () =>{
+    test('La multiplicacion por un numero negativo da como resultado un numero negativo', () =>{
+        expect(core.mul(4,-3)).toBeLessThan(0);
+    })
+
+    test('La multiplicacion por un numero negativo da como resultado un numero negativo', () =>{
+        expect(core.mul(-6,3)).toBeLessThan(0);
+    })
+})
