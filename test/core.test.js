@@ -9,6 +9,7 @@ describe('Subtract', () => {
         expect(core.sub(6, 4)).toBe(2); 
     })
 })
+
 describe('Div', () => {
     test('Should be true that a/b > a', () => {
         let a = Math.floor(Math.random() * 100);
@@ -62,3 +63,4 @@ describe('Add', () => {
         expect(core.add(a,b)).toBeGreaterThan(0);
     })
 })
+

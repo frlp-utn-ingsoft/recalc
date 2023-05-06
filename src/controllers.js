@@ -4,9 +4,13 @@ import core from './core.js';
 const router = express.Router();
 
 router.get("/sub/:a/:b", async function (req, res) {
-    const params = getRequestParameters(req, res);
-    const result = core.sub(params.a, params.b);
-    return res.send({result});
+    try {
+        const params = getRequestParameters(req, res);
+        const result = core.sub(params.a, params.b);
+        return res.send({result});
+    } catch (e) {
+        res.status(400).send(e.message);
+    }
 });
 
 router.get("/div/:a/:b", async function (req, res) {
@@ -27,6 +31,14 @@ router.get("/mul/:a/:b", async function (req, res) {
     } catch (e) {
         res.status(400).send(e.message);
     }
+});
+
+router.get("/pow/:a", async function (req, res) {
+    const a = Number(req.params.a);
+    if (isNaN(a))
+        return res.status(400).send('El parametro debe ser un numero.');
+    const result = core.pow(a);
+    return res.send({result})
 });
 
 function getRequestParameters(req) {
