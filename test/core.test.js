@@ -172,19 +172,3 @@ describe('Mock Multiplicacion', () => {
     expect(result).toBe(6);
   });
 });
-
-
-
-  test('Propiedad conmutativa: 2 + 3 = 3 + 2', () => {
-    expect(core.sum(2, 3)).toBe(core.sum(3, 2));
-  });
-
-  test('Propiedad inversa: 2 + -2 = 0 ', () => {
-    expect(core.sum(2, -2)).toBe(0);
-  });
-
-  test('Propiedad de la identidad: 2 + 0 = 2', () => {
-    expect(core.sum(2, 0)).toBe(2);
-  });
-});
-
