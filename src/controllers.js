@@ -16,4 +16,16 @@ router.get("/sub/:a/:b", async function (req, res) {
     }
 });
 
+router.get("/pow/:a", async function (req, res) {
+    const params = req.params;
+    const a = Number(params.a);
+
+    if (isNaN(a)) {
+        res.status(400).send('El parámetro ingresado no es correcto');
+    } else {
+        const result = core.pow(a);
+        return res.send({ result });
+    }
+});
+
 export default router;
