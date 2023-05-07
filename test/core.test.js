@@ -23,3 +23,57 @@ describe('Pow', () => {
         expect(core.pow(6)).toBe(36);
     })
 })
+
+describe('Div', () => {
+    test('Should be true that a/b > a', () => {
+        let a = Math.floor(Math.random() * 100);
+        let b = Math.floor(Math.random() * 100);
+        expect(core.div(a,b)).toBeLessThan(a);
+    })
+
+    test("Should throw 'No se puede dividir entre 0!' with b = 0", () => {
+        let a = Math.floor(Math.random() * 100);
+        let b = 0;
+        expect(() => core.div(a,b)).toThrow("No se puede dividir entre 0!");
+    })
+
+    test("Should be true that a/b > a when  1 > b > 0  ", () => {
+        let a = Math.floor(Math.random() * 100);
+        let b = Math.random();
+        expect(core.div(a,b)).toBeGreaterThan(a);
+    })
+})
+
+describe('Add', () => {
+    test('Should be true that a+b > a', () => {
+        let a = Math.floor(Math.random() * 50);
+        let b = Math.floor(Math.random() * 50);
+        expect(core.add(a,b)).toBeGreaterThan(a);
+    })
+
+    test('Should be true that a+b > b', () => {
+        let a = Math.floor(Math.random() * 50);
+        let b = Math.floor(Math.random() * 50);
+        expect(core.add(a,b)).toBeGreaterThan(b);
+    })
+
+    test('Should be true that a+b < a or b if both numbers are negative', () => {
+        let a = Math.floor(Math.random() * -50);
+        let b = Math.floor(Math.random() * -50);
+        expect(core.add(a,b)).toBeLessThan(a);
+        expect(core.add(a,b)).toBeLessThan(b);
+        expect(core.add(a,b)).toBeLessThan(0);
+    })
+
+    test('Should be true that c < 0 when |a| > b and a < 0', () => {
+        let a = -50;
+        let b = 30;
+        expect(core.add(a,b)).toBeLessThan(0);
+    })
+
+    test('Should be true that c > 0 when b > |a| and b > 0', () => {
+        let a = -30;
+        let b = 50;
+        expect(core.add(a,b)).toBeGreaterThan(0);
+    })
+})
