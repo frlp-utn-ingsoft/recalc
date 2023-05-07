@@ -30,7 +30,7 @@ describe('Multiply', () => {
       });
       
       test('la multiplicacíon debería cumplir con la propiedad de conmutativa', () => {
-        expect(core.mul(2,3)).toBe(multiply(3,2));
+        expect(core.mul(2,3)).toBe(core.mul(3,2));
       });
       
       test('la multiplicacíon debería cumplir con la propiedad inversa', () => {
@@ -98,36 +98,36 @@ describe('Pow', () => {
 
 describe('Divide', () => {
   test('debería dividir dos números positivos correctamente', () => {
-    expect(core.divide(6, 2)).toBe(3);
+    expect(core.div(6, 2)).toBe(3);
   });
 
   test('debería dividir dos números negativos correctamente', () => {
-    expect(core.divide(-6, -2)).toBe(3);
+    expect(core.div(-6, -2)).toBe(3);
   });
 
   test('no debería permitir ingresar como parámetro valores no numéricos', () => {
     expect(() => {
-      const result = core.divide("asd", 2);
+      const result = core.div("asd", 2);
     }).toThrow();
   });
 
   test('debería cumplir con la propiedad de la reciprocidad', () => {
-    expect(core.divide(2, 1/2)).toBe(4);
+    expect(core.div(2, 1/2)).toBe(4);
   });
 
   test('debería cumplir con la propiedad de la identidad', () => {
-    expect(core.divide(2, 1)).toBe(2);
+    expect(core.div(2, 1)).toBe(2);
   });
 
   test('debería dividir un número positivo y un número negativo correctamente', () => {
-    expect(core.divide(6, -2)).toBe(-3);
+    expect(core.div(6, -2)).toBe(-3);
   });
 });
 
 
 describe('Divide', () => {
   test('Deberia 6/0 = Error', () => {
-      expect(core.divide(6, 0)).toBe("No se puede dividir por 0"); 
+      expect(core.div(6, 0)).toBe("No se puede dividir por 0"); 
   })
 })
 
@@ -135,29 +135,29 @@ describe('Divide', () => {
 
 describe('Sum', () => {
   test('Suma de dos números positivos: 2 + 2 tiene que ser 4', () => {
-    expect(core.sum(2, 2)).toBe(4);
+    expect(core.add(2, 2)).toBe(4);
   });
 
   test('Sumar de dos números negativos: -2 + -2 debería ser -4', () => {
-    expect(core.sum(-2, -2)).toBe(-4);
+    expect(core.add(-2, -2)).toBe(-4);
   });
 
   test('No se permiten valores no numéricos', () => {
     expect(() => {
-      const result = core.sum("asd", 2);
+      const result = core.add("asd", 2);
     }).toThrow(); 
   });
 
   test('Propiedad conmutativa: 2 + 3 = 3 + 2', () => {
-    expect(core.sum(2, 3)).toBe(core.sum(3, 2));
+    expect(core.add(2, 3)).toBe(core.add(3, 2));
   });
 
   test('Propiedad inversa: 2 + -2 = 0 ', () => {
-    expect(core.sum(2, -2)).toBe(0);
+    expect(core.add(2, -2)).toBe(0);
   });
 
   test('Propiedad de la identidad: 2 + 0 = 2', () => {
-    expect(core.sum(2, 0)).toBe(2);
+    expect(core.add(2, 0)).toBe(2);
   });
 });
 
