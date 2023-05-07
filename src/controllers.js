@@ -24,7 +24,7 @@ router.get("/mul/:a/:b", async function (req, res) {
     if (isNaN(a) || isNaN(b)) {
         res.status(400).send('Uno de los parámetros no es un número');
     } else {
-        const result = core.sub(a, b);
+        const result = core.mul(a, b);
         return res.send({ result });
     }
 });
