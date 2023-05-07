@@ -15,3 +15,9 @@ describe('Pow', () => {
         expect(core.pow(4)).toBe(16);
     })
 })
+
+describe('Add', () => {
+    test('Deberia 10 + 6 = 16', () => {
+        expect(core.add(10, 6)).toBe(16);
+    })
+})
