@@ -10,6 +10,14 @@ describe('Subtract', () => {
     })
 })
 
+describe('Multiply', () => {
+    test('mul 1 * 2 to equal 2', () => {
+        expect(core.mul(1, 2)).toBe(2);
+    })
+    
+})
+
+
 describe('Division', () => {
     test('3/4 debería = 0.75', () => {
         expect(core.div(3, 4)).toBe(0.75);
