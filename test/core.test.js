@@ -10,6 +10,22 @@ describe('Subtract', () => {
     })
 })
 
+
+describe('Multiply', () => {
+    test('Deberia 4 * 4 = 16', () => {
+        expect(core.mul(4, 4)).toBe(16); 
+    })
+
+    test('Deberia 2 * 0 = 0', () => {
+        expect(core.mul(2, 0)).toBe(0); 
+    })
+
+    test('Deberia 5 * -3 = -15', () => {
+        expect(core.mul(5, -3)).toBe(-15); 
+    })
+})
+
+
 describe('Add', () => {
     test('Deberia 4 + 2 = 6', () => {
         expect(core.add(4, 2)).toBe(6); 
@@ -26,3 +42,4 @@ describe('Add', () => {
     test('Deberia 0 + 0 = 0', () => {
         expect(core.add(0, 0)).toBe(0); 
     })
+})
