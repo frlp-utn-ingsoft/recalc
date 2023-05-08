@@ -12,6 +12,7 @@ Calculadora con funciones simples.
 # iniciar calculadora
 npm run start
 ```
+## Numero de Grupo : 7
 ## Integrantes del Grupo 
 ### _Martinez Ivan Ezequiel_ - 30631
 ### Tomas Martinez - 30638
