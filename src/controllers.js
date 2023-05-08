@@ -31,7 +31,8 @@ router.get("/div/:a/:b", async function(req, res) {
 });
 
 
-router.get("/mul/:a/:b", async function(req, mul) {
+
+router.get("/mul/:a/:b", async function (req, res) {
     const params = req.params;
     const a = Number(params.a);
     const b = Number(params.b)
