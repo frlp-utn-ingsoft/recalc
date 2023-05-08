@@ -10,6 +10,20 @@ describe('Subtract', () => {
     })
 })
 
+describe('Pow', () => {
+     test('Deberia 0 = 0', () => {
+            expect(core.pow(0)).toBe(0);
+        })
+
+    test('Deberia 2 = 4', () => {
+        expect(core.pow(2)).toBe(4);
+    })
+
+    test('Deberia 6 = 36', () => {
+        expect(core.pow(6)).toBe(36);
+    })
+})
+
 describe('Div', () => {
     test('Should be true that a/b > a', () => {
         let a = Math.floor(Math.random() * 100);
@@ -63,4 +77,3 @@ describe('Add', () => {
         expect(core.add(a,b)).toBeGreaterThan(0);
     })
 })
-
