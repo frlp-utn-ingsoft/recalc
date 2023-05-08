@@ -15,6 +15,7 @@ function divide(a, b) {
 }
 
 function pow(a, b) {
+    return a ** b;
 }
 
 export default {
@@ -22,5 +23,5 @@ export default {
     sub: subtract,
     mul: multiply,
     div: divide,
-    pow: pow
+    pow: pow,
 }
