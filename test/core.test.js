@@ -83,8 +83,8 @@ describe('Pow', () => {
         expect(core.pow(10)).toBe(100); 
     });
 
-    test('Deberia 4 * 4 = 46', () => {
-        expect(core.pow(4)).toBe(46); 
+    test('Deberia 4 * 4 = 16', () => {
+        expect(core.pow(4)).toBe(16); 
     });
 
 	test('Deberia dar como resultado un numero positivo', () => {

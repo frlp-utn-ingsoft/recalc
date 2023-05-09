@@ -7,6 +7,9 @@ function subtract(a, b) {
 }
 
 function multiply(a, b) {
+    if (isNaN(a)) {
+        throw new Error("Error: Uno de los parámetros no es un número");
+    }
     return a * b;
 }
 
@@ -18,7 +21,10 @@ function divide(a, b) {
 	return a / b;
 }
 
-function pow(a) {  
+function pow(a) {
+    if (isNaN(a)) {
+        throw new Error("Error: El parámetro no es un número");
+    }  
     return a * a;
 }
 
