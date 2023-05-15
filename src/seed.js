@@ -1,7 +1,8 @@
 import { Operation, createTables } from "./models.js";
 
-async function seed() {
+export async function seed() {
     await createTables()
+
     Operation.bulkCreate([
         { name: "ADD" },
         { name: "SUB" },
@@ -11,4 +12,6 @@ async function seed() {
     ])
 }
 
-seed()
+if (process.env.NODE_ENV !== 'test') {
+    seed()
+}
