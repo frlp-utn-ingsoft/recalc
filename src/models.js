@@ -13,6 +13,10 @@ export const History = sequelize.define('History', {
     secondArg: {
         type: DataTypes.NUMBER,
         allowNull: true
+    },
+    result: {
+        type: DataTypes.NUMBER,
+        allowNull: true
     }
 });
 
@@ -25,7 +29,7 @@ export const Operation = sequelize.define('Operation', {
 
 History.belongsTo(Operation)
 
-export async function createHistoryEntry({ firstArg, secondArg, operationName }) {
+export async function createHistoryEntry({ firstArg, secondArg, operationName, result }) {
     const operation = await Operation.findOne({
         where: {
             name: operationName
@@ -34,6 +38,7 @@ export async function createHistoryEntry({ firstArg, secondArg, operationName })
 
     return History.create({
         firstArg,
+        result,
         OperationId: operation.id
     })
 }
