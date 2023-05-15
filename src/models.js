@@ -27,6 +27,7 @@ export const Operation = sequelize.define('Operation', {
     },
 });
 
+Operation.hasMany(History)
 History.belongsTo(Operation)
 
 export async function createHistoryEntry({ firstArg, secondArg, operationName, result }) {
