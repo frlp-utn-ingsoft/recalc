@@ -16,7 +16,7 @@ describe("API substract", () => {
             .end((err, res) => {
                 if (err) throw err
 
-                expect(res.body.result).toEqual(1);
+                expect(res.body.result).toEqual(10);
             })
     })
 })
