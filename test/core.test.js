@@ -8,6 +8,10 @@ describe('Subtract', () => {
     test('Deberia 6 - 4 = 2', () => {
         expect(core.sub(6, 4)).toBe(2);
     })
+
+    test('El resultado de una resta con el segundo parámetro mayor al primero debería dar un número negativo', () => {
+        expect(core.sub(8, 10)).toBeLessThan(0);
+    })
 })
 
 describe('Division', () => {
@@ -41,6 +45,10 @@ describe('Multiply', () => {
     test('Deberia 5 * -3 = -15', () => {
         expect(core.mul(5, -3)).toBe(-15);
     })
+
+    test('El resultado de una multiplicación con un parámetro negativo y otro positivo debería dar un número negativo', () => {
+        expect(core.mul(-5, 3)).toBeLessThan(0);
+    })
 })
 
 
@@ -61,6 +69,7 @@ describe('Add', () => {
         expect(core.add(0, 0)).toBe(0);
     })
 })
+
 describe('Pow', () => {
     test('Deberia -1 ** 2 = 1', () => {
         expect(core.pow(-1, 2)).toBe(1);
