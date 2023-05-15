@@ -1,10 +1,10 @@
-# ReCalc
+# ReCalc v1.2.0
 
 Calculadora con funciones simples.
 
 ## Dependencias
 
-- node > 16
+- node > 18
 
 ## Comandos
 
