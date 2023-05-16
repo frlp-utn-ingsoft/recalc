@@ -24,6 +24,9 @@ describe('Add', () => {
 	test('Deberia 6 + 4 = 10', () => {
 		expect(core.add(6, 4)).toBe(10);
 	});
+    test('Deberia lanzar error al intentar usar un parámetro que no es un número', () => {
+        expect(() => core.add('a', 2)).toThrow('Uno de los parámetros no es un número');
+    });
 });
 
 //Test de Multiply
