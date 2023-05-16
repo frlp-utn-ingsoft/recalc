@@ -105,3 +105,5 @@ dist
 
 #Idea Folders
 .idea/
+
+db.sqlite3
