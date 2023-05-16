@@ -8,6 +8,10 @@ describe('Subtract', () => {
     test('Deberia 6 - 4 = 2', () => {
         expect(core.sub(6, 4)).toBe(2); 
     })
+
+    test('Deberia 3 - 6 < 0', ()=>{
+        expect(core.sub(3, 6)).toBeLessThan(0);
+    })
 })
 
 describe('Pow', () => {
