@@ -1,18 +1,20 @@
 import express from 'express';
 import core from './core.js';
 
+import { createHistoryEntry } from './models.js'
+
 const router = express.Router();
 
 router.get("/sub/:a/:b", async function (req, res) {
     try {
         const params = getRequestParameters(req, res);
         const result = core.sub(params.a, params.b);
+        await createHistoryEntry({ firstArg: a, operationName: "ADD" })
         return res.send({result});
     } catch (e) {
         res.status(400).send(e.message);
     }
 });
-
 router.get("/div/:a/:b", async function (req, res) {
     try {
         const params = getRequestParameters(req, res);
