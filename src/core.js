@@ -24,6 +24,9 @@ function divide(a, b) {
 		//se verifica que el valor de "b" es 0
 		throw new Error("Error: No se puede dividir por 0,");
 	}
+    if (isNaN(a) || isNaN(b)) {
+        throw new Error('Uno de los parámetros no es un número');
+    }
 	return a / b;
 }
 
