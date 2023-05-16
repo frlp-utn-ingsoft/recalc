@@ -1,4 +1,7 @@
 function add(a, b) {
+	if(isNaN(a) || isNaN(b)){
+		throw Error("Los números ingresados deben ser valores numéricos");
+	}
 	return a+b;
 }
 

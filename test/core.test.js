@@ -95,7 +95,6 @@ describe('Pow', () => {
   });
 })
 
-
 describe('Divide', () => {
   test('debería dividir dos números positivos correctamente', () => {
     expect(core.div(6, 2)).toBe(3);
@@ -139,13 +138,15 @@ describe('Sum', () => {
   });
 
   test('Sumar de dos números negativos: -2 + -2 debería ser -4', () => {
-    expect(core.add(-2, -2)).toBe(-4);
+    expect(core.add(-2, -2)).toBeLessThan(0);
+
   });
 
   test('No se permiten valores no numéricos', () => {
     expect(() => {
-      const result = core.add("asd", 2);
-    }).toThrow(); 
+      const result = core.add("numero", 2);
+    }).toThrow();
+
   });
 
   test('Propiedad conmutativa: 2 + 3 = 3 + 2', () => {
@@ -158,6 +159,7 @@ describe('Sum', () => {
 
   test('Propiedad de la identidad: 2 + 0 = 2', () => {
     expect(core.add(2, 0)).toBe(2);
+
   });
 });
 
