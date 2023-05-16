@@ -8,6 +8,10 @@ describe('Subtract', () => {
     test('Deberia 6 - 4 = 2', () => {
         expect(core.sub(6, 4)).toBe(2); 
     })
+
+    test('Deberia 6 - 9 = -3', () => {
+      expect(core.sub(6, 9)).toBe(-3); 
+    })
 })
 
 describe('Multiply', () => {
@@ -26,7 +30,7 @@ describe('Multiply', () => {
       });
       
       test('la multiplicacíon debería cumplir con la propiedad de conmutativa', () => {
-        expect(core.mul(2,3)).toBe(multiply(3,2));
+        expect(core.mul(2,3)).toBe(core.mul(3,2));
       });
       
       test('la multiplicacíon debería cumplir con la propiedad inversa', () => {
@@ -91,19 +95,58 @@ describe('Pow', () => {
   });
 })
 
-describe('Add', () => {
+describe('Divide', () => {
+  test('debería dividir dos números positivos correctamente', () => {
+    expect(core.div(6, 2)).toBe(3);
+  });
+
+  test('debería dividir dos números negativos correctamente', () => {
+    expect(core.div(-6, -2)).toBe(3);
+  });
+
+  test('no debería permitir ingresar como parámetro valores no numéricos', () => {
+    expect(() => {
+      const result = core.div("asd", 2);
+    }).toThrow();
+  });
+
+  test('debería cumplir con la propiedad de la reciprocidad', () => {
+    expect(core.div(2, 1/2)).toBe(4);
+  });
+
+  test('debería cumplir con la propiedad de la identidad', () => {
+    expect(core.div(2, 1)).toBe(2);
+  });
+
+  test('debería dividir un número positivo y un número negativo correctamente', () => {
+    expect(core.div(6, -2)).toBe(-3);
+  });
+});
+
+
+describe('Divide', () => {
+  test('Deberia 6/0 = Error', () => {
+      expect(core.div(6, 0)).toBe("No se puede dividir por 0"); 
+  })
+})
+
+
+
+describe('Sum', () => {
   test('Suma de dos números positivos: 2 + 2 tiene que ser 4', () => {
     expect(core.add(2, 2)).toBe(4);
   });
 
   test('Sumar de dos números negativos: -2 + -2 debería ser -4', () => {
     expect(core.add(-2, -2)).toBeLessThan(0);
+
   });
 
   test('No se permiten valores no numéricos', () => {
     expect(() => {
       const result = core.add("numero", 2);
     }).toThrow();
+
   });
 
   test('Propiedad conmutativa: 2 + 3 = 3 + 2', () => {
@@ -116,5 +159,18 @@ describe('Add', () => {
 
   test('Propiedad de la identidad: 2 + 0 = 2', () => {
     expect(core.add(2, 0)).toBe(2);
+
+  });
+});
+
+describe('Mock Multiplicacion', () => {
+  test('Deberia multiplicar 2 numeros', () => {
+
+    const mockMultiplicacion = jest.fn(core.mul);
+    const result = mockMultiplicacion(2, 3);
+
+    expect(mockMultiplicacion).toHaveBeenCalled();
+    expect(mockMultiplicacion).toHaveBeenCalledWith(2, 3);
+    expect(result).toBe(6);
   });
 });
