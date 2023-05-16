@@ -13,7 +13,7 @@ describe('Subtract', () => {
 describe('Division', () => {
 
     test('Deberia 2 / 0 = Error', () => {
-        expect(() => div(2, 0).toThrow('No se puede dividir por cero'));
+        expect(core.div(2, 0)).toBe("No se puede dividir por cero");
     })
 
     test('Deberia 10 / 2 = 5', () => {
