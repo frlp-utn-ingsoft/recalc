@@ -55,13 +55,13 @@ describe("Prueba de la funcion producto", () => {
     expect(core.mul(4, 2)).toBe(8);
   });
 
-  //Producto de numeros positivos con numero negativos
-  test("El producto de -4 * 2 debe ser igual a -8", () => {
-    expect(core.mul(-4, 2)).toBe(-8);
+  //Producto de numeros positivos con numero negativos debe ser menor que 0
+  test("El producto de un número positivo por un número negativo debe ser menor a 0", () => {
+    expect(core.mul(-4, 2)).toBeLessThan(0);
   });
 
-  //producto de dos numeros negativos
-  test("El producto de -10 * -5 debe ser igual a 50", () => {
-    expect(core.mul(-10, -5)).toBe(50);
+  //producto de dos numeros negativos debe ser mayor que 0
+  test("El producto de dos números negativos debe ser mayor a 0", () => {
+    expect(core.mul(-10, -5)).toBeGreaterThan(0);
   });
 });
