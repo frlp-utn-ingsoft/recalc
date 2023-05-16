@@ -9,7 +9,7 @@ router.get("/sub/:a/:b", async function (req, res) {
     try {
         const params = getRequestParameters(req, res);
         const result = core.sub(params.a, params.b);
-        await createHistoryEntry({ firstArg: a, operationName: "ADD" })
+        await createHistoryEntry({ firstArg: params.a, operationName: "ADD" })
         return res.send({result});
     } catch (e) {
         res.status(400).send(e.message);
