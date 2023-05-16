@@ -68,6 +68,9 @@ describe('Multiply', () => {
     test('Deberia lanzar un error al dividir por 0', () => {
         expect(() => { core.div(2,0) }).toThrow('No se puede dividir por 0');
     });
+    test('Deberia lanzar error al intentar usar un parámetro que no es un número', () => {
+        expect(() => core.div('a', 2)).toThrow('Uno de los parámetros no es un número');
+    });
 });
 
 
