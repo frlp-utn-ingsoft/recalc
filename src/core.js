@@ -6,6 +6,9 @@ function add(a, b) {
 }
 
 function subtract(a, b) {
+    if (isNaN(a) || isNaN(b)) {
+        throw new Error('Uno de los parámetros no es un número');
+    }
     return a - b;
 }
 

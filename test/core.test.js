@@ -13,6 +13,9 @@ describe('Subtract', () => {
 	test('Deberia 2 - 4 = Negativo', () => {
 		expect(core.sub(2, 4)).toBeLessThan(0);
 	});
+    test('Deberia lanzar error al intentar usar un parámetro que no es un número', () => {
+        expect(() => core.sub('B', 10)).toThrow('Uno de los parámetros no es un número');
+    });
 });
 
 //Test de Add
