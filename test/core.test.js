@@ -50,6 +50,8 @@ describe('Multiply', () => {
     test('Deberia lanzar error al intentar usar un parámetro que no es un número', () => {
         expect(() => core.mul('a', 2)).toThrow('Uno de los parámetros no es un número');
     });
+    test('Deberia -5 * -8 = 40', () => {
+        expect(core.mul(-5, -8)).toBe(40); 
 });
 
 
@@ -103,4 +105,4 @@ describe('Pow', () => {
     test('Deberia lanzar error al intentar usar un parámetro que no es un número', () => {
         expect(() => core.pow('a')).toThrow('El parámetro no es un número');
     });
-});
+})});
