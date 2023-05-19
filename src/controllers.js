@@ -53,7 +53,7 @@ router.get("/div/:a/:b", async function (req, res) {
         res.status(400).send('No se puede dividir por cero');
     } else {
         const result = core.div(a, b);
-        return div.send({ result });
+        return res.send({ result });
         }
 });
 
