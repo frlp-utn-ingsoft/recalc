@@ -103,10 +103,10 @@ describe('Divide', () => {
   test('debería dividir dos números negativos correctamente', () => {
     expect(core.div(-6, -2)).toBe(3);
   });
-
+    
   test('no debería permitir ingresar como parámetro valores no numéricos', () => {
     expect(() => {
-      const result = core.div("asd", 2);
+      const result = core.div("numero", 2);
     }).toThrow();
   });
 
@@ -121,10 +121,7 @@ describe('Divide', () => {
   test('debería dividir un número positivo y un número negativo correctamente', () => {
     expect(core.div(6, -2)).toBe(-3);
   });
-});
 
-
-describe('Divide', () => {
   test('Deberia 6/0 = Error', () => {
       expect(core.div(6, 0)).toBe("No se puede dividir por 0"); 
   })
