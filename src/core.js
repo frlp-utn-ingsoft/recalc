@@ -10,6 +10,9 @@ function subtract(a, b) {
 }
 
 function multiply(a, b) {
+	if(isNaN(a) || isNaN(b)){
+		throw Error("Los parametros ingresados deben ser numericos");
+	}
 	return a*b;
 }
 
