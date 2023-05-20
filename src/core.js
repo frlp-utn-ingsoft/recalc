@@ -17,12 +17,17 @@ function multiply(a, b) {
 }
 
 function divide(a, b){
-	if (b == 0) { 
-		return "No se puede dividir por 0";
+	if(isNaN(a) || isNaN(b)){
+		throw Error("Los números ingresados deben ser valores numéricos");
 	} else {
-	    return a/b;
+		if (b == 0) { 
+			return "No se puede dividir por 0"
+		} else {
+	    		return a/b;
+		}
 	}
 }
+
 
 function pow(a) {
 	if(isNaN(a)){
