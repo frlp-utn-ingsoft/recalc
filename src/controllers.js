@@ -52,7 +52,10 @@ router.get("/div/:a/:b", async function (req, res) {
     } else if (b === 0) {
         res.status(400).send('No se puede dividir por cero');
     } else {
-        const result = core.div(a, b)}});
+        const result = core.div(a, b);
+	return res.send({ result });
+        }
+});
 
 router.get("/sum/:a/:b", async function (req, res) {
     const params = req.params;
