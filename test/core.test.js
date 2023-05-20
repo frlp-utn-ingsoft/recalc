@@ -106,7 +106,7 @@ describe('Divide', () => {
     
   test('no debería permitir ingresar como parámetro valores no numéricos', () => {
     expect(() => {
-      const result = core.div("numero", 2);
+      const result = core.div("asd", 2);
     }).toThrow();
   });
 
