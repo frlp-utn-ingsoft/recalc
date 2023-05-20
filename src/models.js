@@ -42,6 +42,7 @@ export async function createHistoryEntry({ firstArg, secondArg, operationName, r
 
     return History.create({
         firstArg,
+        secondArg, //Arreglar el bug que hace que no se guarde el segundo parametro en la tabla History y hacer el test correspondiente
         result,
         OperationId: operation.id
     })

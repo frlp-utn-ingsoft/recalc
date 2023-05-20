@@ -24,6 +24,8 @@ describe("History", () => {
 
         expect(histories.length).toEqual(1)
         expect(histories[0].firstArg).toEqual(2)
+        //Arreglar el bug que hace que no se guarde el segundo parametro en la tabla History y hacer el test correspondiente
+        expect(histories[0].secondArg).toEqual(2)
         expect(histories[0].result).toEqual(0)
         expect(histories[0].Operation.name).toEqual("SUB")
     })
