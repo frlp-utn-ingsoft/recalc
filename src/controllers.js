@@ -1,7 +1,7 @@
 import express from "express";
 import core from "./core.js";
 
-import { createHistoryEntry } from './models.js'
+import {createHistoryEntry} from "./models.js";
 
 const router = express.Router();
 
@@ -15,8 +15,13 @@ router.get("/sub/:a/:b", async function (req, res) {
   } else {
     const result = core.sub(a, b);
 
-    await createHistoryEntry({ firstArg: a, operationName: "ADD" })
-    return res.send({ result });
+    await createHistoryEntry({
+      firstArg: a,
+      secondArg: b,
+      result,
+      operationName: "SUB",
+    });
+    return res.send({result});
   }
 });
 
