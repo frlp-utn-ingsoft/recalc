@@ -44,3 +44,30 @@ describe("API add", () => {
     expect(res.body.resultado).toBeLessThan(a);
   });
 });
+
+describe("API MUL", () => {
+  test("Deberia responder con un 200 ok", async () => {
+    const app = await api.build();
+
+    const res = await request(app)
+      .get("/api/v1/multiply/4/2")
+      .expect(200)
+      .expect("Content-Type", "application/json; charset=utf-8");
+
+    expect(res.body.resultado).toEqual(8);
+  });
+
+  test("Si los parametros son decimales, resultado deberia ser decimal", async () => {
+    const app = await api.build();
+    const a = 2.5;
+    const b = 3.6;
+
+    const res = await request(app)
+      .get(`/api/v1/add/${a}/${b}`)
+      .expect(200)
+      .expect("Content-Type", "application/json; charset=utf-8");
+
+    const resultado = res.body.resultado;
+    expect(Number.isInteger(resultado)).toBe(false);
+  });
+});
