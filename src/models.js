@@ -53,6 +53,10 @@ export async function createHistoryEntry({
   });
 }
 
+export async function getHistorial() {
+  return History.findAll();
+}
+
 export function createTables() {
   return Promise.all([
     History.sync({force: true}),
