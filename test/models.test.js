@@ -15,7 +15,8 @@ describe("History", () => {
             firstArg: 2,
             secondArg: 2,
             result: 0,
-            operationName: "SUB"
+            operationName: "SUB",
+            error:""
         })
 
         const histories = await History.findAll({
@@ -28,5 +29,7 @@ describe("History", () => {
         expect(histories[0].secondArg).toEqual(2)
         expect(histories[0].result).toEqual(0)
         expect(histories[0].Operation.name).toEqual("SUB")
+        //. Hacer un test que compruebe que el nuevo atributo efectivamente se guarde en la base de datos.
+        expect(histories[0].error).toEqual("")
     })
 })

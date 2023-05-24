@@ -20,6 +20,11 @@ export const History = sequelize.define('History', {
     result: {
         type: DataTypes.NUMBER,
         allowNull: true
+    },
+
+    error: { //Agregar un atributo “error” de tipo texto en el modelo History para guardar la de cualquier error que se produzca en una operación
+        type: DataTypes.TEXT,
+        allowNull: true
     }
 });
 
@@ -33,7 +38,7 @@ export const Operation = sequelize.define('Operation', {
 Operation.hasMany(History)
 History.belongsTo(Operation)
 
-export async function createHistoryEntry({ firstArg, secondArg, operationName, result }) {
+export async function createHistoryEntry({ firstArg, secondArg, operationName, result, error}) {
     const operation = await Operation.findOne({
         where: {
             name: operationName
@@ -44,7 +49,8 @@ export async function createHistoryEntry({ firstArg, secondArg, operationName, r
         firstArg,
         secondArg, //Arreglar el bug que hace que no se guarde el segundo parametro en la tabla History y hacer el test correspondiente
         result,
-        OperationId: operation.id
+        OperationId: operation.id,
+        error
     })
 }
 
