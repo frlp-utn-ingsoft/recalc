@@ -53,3 +53,19 @@ export function createTables() {
         Operation.sync({ force: true })
     ]);
 }
+
+
+export async function obtenerHistorialBaseDatos() {
+  try {
+    const historial = await History.findAll({
+      include: [Operation],
+      order: [['createdAt', 'DESC']],
+    });
+
+    return historial;
+  } catch (error) {
+    console.error('Error al obtener el historial de la base de datos:', error);
+    throw error;
+  }
+} 
+
