@@ -30,24 +30,11 @@ describe("History", () => {
     })
 })
 
-/* describe("History", () => {
-    test("Deberia poder eliminar el historial de la base de datos", async() => {
 
-        const histories = await deleteFullHistory({
-            expect(histories).toBeNull()
-        })
-    })
-}) */
 describe("History", () => {
-
-    test
     test("Deberia poder eliminar el historial de la base de datos", async() => {
         await deleteFullHistory();
         const histories = await History.findAll();
-
-        expect
-
-
         expect(histories.length).toEqual(0);
     });
 });
