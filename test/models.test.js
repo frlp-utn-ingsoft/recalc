@@ -1,16 +1,17 @@
 const { seed } = require('../src/seed.js')
 const {
     createHistoryEntry,
+    deleteFullHistory,
     History,
     Operation
 } = require('../src/models.js')
 
-beforeEach(async () => {
+beforeEach(async() => {
     await seed()
 })
 
 describe("History", () => {
-    test("Deberia poder crear una resta en el history", async () => {
+    test("Deberia poder crear una resta en el history", async() => {
         await createHistoryEntry({
             firstArg: 2,
             secondArg: 2,
@@ -28,3 +29,25 @@ describe("History", () => {
         expect(histories[0].Operation.name).toEqual("SUB")
     })
 })
+
+/* describe("History", () => {
+    test("Deberia poder eliminar el historial de la base de datos", async() => {
+
+        const histories = await deleteFullHistory({
+            expect(histories).toBeNull()
+        })
+    })
+}) */
+describe("History", () => {
+
+    test
+    test("Deberia poder eliminar el historial de la base de datos", async() => {
+        await deleteFullHistory();
+        const histories = await History.findAll();
+
+        expect
+
+
+        expect(histories.length).toEqual(0);
+    });
+});
