@@ -33,7 +33,7 @@ router.get("/div/:a/:b", async function(req, res) {
         res.status(400).send({"error":'No se puede dividir por cero'});}
         else{
         const result = core.div(a, b);
-        await createHistoryEntry({ firstArg: a, secondArg: b, operationName: "DIV" })
+        await createHistoryEntry({ firstArg: a, secondArg: b, result, operationName: "DIV" })
         return res.send({ result });
     }
 });
