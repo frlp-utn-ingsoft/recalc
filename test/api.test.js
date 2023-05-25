@@ -51,3 +51,18 @@ describe("API multiplication", () => {
 		});
     })
 })
+
+describe("API division", () => {
+    test("Deberia responder con un 400 Error", async () => {
+        const app = await api.build()
+
+        return request(app)
+	        .get('/api/v1/div/2/0')
+            .expect(400)
+            .expect('Content-Type', "application/json; charset=utf-8")
+            .then((res) => {
+                expect(res.body.error).toEqual("No se puede dividir por cero")
+            })
+            
+    })
+})
