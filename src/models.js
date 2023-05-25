@@ -61,6 +61,19 @@ export function createTables() {
     ]);
 }
 
+export async function deleteFullHistory() {
+    try {
+        await History.destroy({
+            where: {},
+            truncate: true,
+        });
+
+        console.log('Historial eliminado exitosamente');
+    } catch (error) {
+        console.error('Error al eliminar el historial:', error);
+        throw error;
+    }
+}
 
 export async function obtenerHistorialBaseDatos() {
   try {
