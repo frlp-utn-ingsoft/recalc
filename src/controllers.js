@@ -15,7 +15,8 @@ router.get("/sub/:a/:b", async function(req, res) {
     } else {
         const result = core.sub(a, b);
 
-        await createHistoryEntry({ firstArg: a, secondArg: b, operationName: "SUB" })
+        await createHistoryEntry({ firstArg: a, secondArg: b, result, operationName: "SUB" })
+
         return res.send({ result });
     }
 });
@@ -48,7 +49,7 @@ router.get("/mul/:a/:b", async function (req, res) {
         res.status(400).send('Uno de los parámetros no es un número');
     } else {
         const result = core.mul(a, b);
-	await createHistoryEntry({ firstArg: a, secondArg: b, operationName: "MUL" })
+	await createHistoryEntry({ firstArg: a, secondArg: b, result, operationName: "MUL" })
         return res.send({ result });
     }
 });
@@ -63,6 +64,8 @@ router.get("/add/:a/:b", async function(req, res) {
         res.status(400).send('Uno de los parámetros no es un número');
     } else {
         const result = core.add(a, b);
+
+        await createHistoryEntry({ firstArg: a, secondArg: b, result, operationName: "ADD" })
         return res.send({ result });
     }
 });
