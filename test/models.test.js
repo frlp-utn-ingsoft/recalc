@@ -15,6 +15,7 @@ describe("History", () => {
             firstArg: 2,
             secondArg: 2,
             result: 0,
+	    error: "",
             operationName: "SUB"
         })
 
@@ -25,6 +26,7 @@ describe("History", () => {
         expect(histories.length).toEqual(1)
         expect(histories[0].firstArg).toEqual(2)
         expect(histories[0].result).toEqual(0)
+	expect(histories[0].error).toEqual("")
         expect(histories[0].Operation.name).toEqual("SUB")
     })
 })
