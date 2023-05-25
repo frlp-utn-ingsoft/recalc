@@ -1,6 +1,7 @@
 const { seed } = require('../src/seed.js')
 const {
     createHistoryEntry,
+    obtenerHistorialBaseDatos,
     History,
     Operation
 } = require('../src/models.js')
@@ -30,6 +31,16 @@ describe("History", () => {
         expect(histories[0].Operation.name).toEqual("SUB")
     })
 })
+
+ describe("History", () => {
+    test("Deberia poder mostrar el historial de la bbdd", async () => {
+        
+        const History = await obtenerHistorialBaseDatos();
+
+        expect(History).toBeDefined(); // Verificar que se haya obtenido algún resultado
+        expect(Array.isArray(History)).toBe(true); // Verificar que el historial sea un arreglo
+    });
+}); 
 
 describe("History", () => {
     test("Deberia poder guardar el segundo parámetro en el history", async () => {
