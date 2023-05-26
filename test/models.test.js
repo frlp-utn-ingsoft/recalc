@@ -33,3 +33,23 @@ describe("History", () => {
         expect(histories[0].error).toEqual("")
     })
 })
+
+describe("History", () => {
+    test("Debería devolver todo el historial", async() => {
+        await createHistoryEntry({
+            firstArg: 10,
+            secondArg: 5,
+            result: 5,
+            operationName: "SUB"
+        });
+        await createHistoryEntry({
+            firstArg: 4,
+            secondArg: 2,
+            result: 2,
+            operationName: "SUB"
+        });
+        const histories = await History.count();
+        const histories_deleted = await History.destroy({ where: {}});
+        expect(histories_deleted).toEqual(histories);
+    });
+});
