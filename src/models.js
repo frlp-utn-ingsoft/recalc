@@ -60,3 +60,9 @@ export function createTables() {
         Operation.sync({ force: true })
     ]);
 }
+
+export async function deleteHistory (){
+    return History.destroy(
+        {   where: {} 
+        });
+}
