@@ -16,26 +16,40 @@ async function loop() {
         return readline.close();
     }
 
-    if (fnName !== "add" && fnName !== "sub" && fnName !== "mul" && fnName !== "div" && fnName !== "pow"){
+    if (fnName !== "add" && fnName !== "sub" && fnName !== "mul" && fnName !== "div" && fnName !== "pow" && fnName !== "sqr"){
         console.log("Función inválida, intente nuevamente.");
         loop();
     }
 
     const fn = core[fnName];
 
-    const firstNum = await readline.question("Ingrese el primer número: ")
-    const secondNum = await readline.question("Ingrese el segundo número: ")
+    if (fnName == "sqr"){
+        const firstNum = await readline.question("Ingrese el número: ")
 
-    if (!isNaN(firstNum) && !isNaN(secondNum)){
-
-    const result = fn(Number(firstNum), Number(secondNum));
-
-    console.log(result);
-    loop();
-
+        if(!isNaN(firstNum)){
+            const result = fn(Number(firstNum));
+            console.log(result);
+            loop();
+        }else{
+            console.log('Debe ingresar únicamente números.');
+            loop();
+            }
     }else{
-    console.log('Debe ingresar únicamente números.');
-    loop();
+
+        const firstNum = await readline.question("Ingrese el primer número: ")
+        const secondNum = await readline.question("Ingrese el segundo número: ")
+
+        if (!isNaN(firstNum) && !isNaN(secondNum)){
+
+        const result = fn(Number(firstNum), Number(secondNum));
+
+        console.log(result);
+        loop();
+
+        }else{
+        console.log('Debe ingresar únicamente números.');
+        loop();
+        }
     }
 }
 
