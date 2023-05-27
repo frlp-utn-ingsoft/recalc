@@ -70,6 +70,12 @@ router.get("/multiply/:a/:b", async function (req, res) {
       .send({error: "Los parámetros no son válidos para el producto"});
   } else {
     const result = core.mul(a, b);
+    await createHistoryEntry({
+      firstArg: a,
+      secondArg: b,
+      result,
+      operationName: "MUL",
+    });
     return res.send({resultado: result});
   }
 });
