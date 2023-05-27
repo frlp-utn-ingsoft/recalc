@@ -70,6 +70,7 @@ router.get("/add/:a/:b", async function(req, res) {
     }
 });
 
+
 router.get("/pow/:a/:b", async function(req, res) {
     const params = req.params;
     const a = Number(params.a);
@@ -83,5 +84,21 @@ router.get("/pow/:a/:b", async function(req, res) {
         return res.send({ result });
     }
 });
+
+
+router.get("/sqr/:a", async function(req, res) {
+    const params = req.params;
+    const a = Number(params.a);
+
+    if (isNaN(a)) {
+        res.status(400).send('El parámetro no es un número');
+    } else {
+        const result = core.sqr(a);
+
+        await createHistoryEntry({ firstArg: a, secondArg: null, result, operationName: "SQR" })
+        return res.send({ result });
+    }
+});
+
 
 export default router;
