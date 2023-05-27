@@ -10,15 +10,15 @@ const sequelize = new Sequelize({
 
 export const History = sequelize.define('History', {
     firstArg: {
-        type: DataTypes.FLOAT,
+        type: DataTypes.NUMBER,
         allowNull: false
     },
     secondArg: {
-        type: DataTypes.FLOAT,
+        type: DataTypes.NUMBER,
         allowNull: true
     },
     result: {
-        type: DataTypes.FLOAT,
+        type: DataTypes.NUMBER,
         allowNull: true
     }
 });
