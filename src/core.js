@@ -26,10 +26,15 @@ function pow(a, b) {
     return a ** b;
 }
 
+function sqr(a) {
+    return Math.sqrt(a);
+}
+
 export default {
     add: add,
     sub: subtract,
     mul: multiply,
     div: divide,
     pow: pow,
+    sqr: sqr,
 }
