@@ -16,14 +16,14 @@ async function loop() {
         return readline.close();
     }
 
-    if (fnName !== "add" && fnName !== "sub" && fnName !== "mul" && fnName !== "div" && fnName !== "pow" && fnName !== "sqr"){
+    if (fnName !== "add" && fnName !== "sub" && fnName !== "mul" && fnName !== "div" && fnName !== "pow" && fnName !== "sqr" && fnName !== "bin"){
         console.log("Función inválida, intente nuevamente.");
         loop();
     }
 
     const fn = core[fnName];
 
-    if (fnName == "sqr"){
+    if (fnName == "sqr" || fnName == "bin"){
         const firstNum = await readline.question("Ingrese el número: ")
 
         if(!isNaN(firstNum)){

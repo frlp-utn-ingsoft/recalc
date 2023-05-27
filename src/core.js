@@ -30,6 +30,10 @@ function sqr(a) {
     return Math.sqrt(a);
 }
 
+function bin(a) {
+    return a.toString(2);
+}
+
 export default {
     add: add,
     sub: subtract,
@@ -37,4 +41,5 @@ export default {
     div: divide,
     pow: pow,
     sqr: sqr,
+    bin: bin,
 }
