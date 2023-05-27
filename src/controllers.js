@@ -1,7 +1,7 @@
 import express from "express";
 import core from "./core.js";
 
-import {createHistoryEntry, History} from "./models.js";
+import {createHistoryEntry, getHistorial, History} from "./models.js";
 
 const router = express.Router();
 
@@ -96,11 +96,8 @@ router.get("/pow/:a/:b", async function (req, res) {
 });
 
 router.get("/all", async function (req, res) {
-  const result = History.findAll()
-    .then((resp) => res.send({resp}))
-    .catch((error) => res.status(400).send({error}));
-
-  return result;
+  const historial = await getHistorial();
+  return res.send({historial});
 });
 
 export default router;
