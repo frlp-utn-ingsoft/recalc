@@ -2,7 +2,8 @@ const { seed } = require('../src/seed.js')
 const {
     createHistoryEntry,
     History,
-    Operation
+    Operation,
+    getHistory
 } = require('../src/models.js')
 
 beforeEach(async () => {
@@ -53,4 +54,36 @@ describe("History", () => {
         expect(histories[0].Operation.name).toEqual("DIV");
         expect(histories[0].error).toEqual("División por cero"); 
     })
+
+    test("Debería obtener todo el historial desde la base de datos", async () => {
+        const historyEntry1 = {
+          firstArg: 2,
+          secondArg: 2,
+          result: 0,
+          operationName: "SUB",
+          error: null,
+        };
+        const historyEntry2 = {
+          firstArg: 5,
+          secondArg: 0,
+          result: null,
+          operationName: "DIV",
+          error: "División por cero",
+        };
+    
+        await createHistoryEntry(historyEntry1);
+        await createHistoryEntry(historyEntry2);
+    
+        const history = await getHistory();
+    
+        expect(history.length).toEqual(2);
+        expect(history[0].firstArg).toEqual(historyEntry1.firstArg);
+        expect(history[0].result).toEqual(historyEntry1.result);
+        expect(history[0].error).toEqual(historyEntry1.error);
+        expect(history[0].Operation.name).toEqual(historyEntry1.operationName);
+        expect(history[1].firstArg).toEqual(historyEntry2.firstArg);
+        expect(history[1].result).toEqual(historyEntry2.result);
+        expect(history[1].error).toEqual(historyEntry2.error);
+        expect(history[1].Operation.name).toEqual(historyEntry2.operationName);
+      });
 })

@@ -59,3 +59,9 @@ export function createTables() {
         Operation.sync({ force: true })
     ]);
 }
+
+export async function getHistory() {
+    return History.findAll({
+      include: [Operation],
+    });
+  }
