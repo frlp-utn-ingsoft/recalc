@@ -3,7 +3,8 @@ const {
     createHistoryEntry,
     History,
     Operation,
-    getAllHistory
+    getAllHistory,
+    deleteAllHistory
 } = require('../src/models.js')
 
 beforeEach(async () => {
@@ -48,9 +49,7 @@ describe("History", () => {
         expect(histories[0].result).toEqual(2)
         expect(histories[0].Operation.name).toEqual("SUB")
     });
-})
 
-describe("getHistory", () => {
     test("Deberia traerme todo el historial", async () => {
 
         const histories = await History.findAll({
@@ -66,5 +65,22 @@ describe("getHistory", () => {
             expect(histories[i].result).toEqual(histories2[i].result)
             expect(histories[i].Operation.name).toEqual(histories2[i].Operation.name)
         }
-    })
+    });
+
+
+    test("Deberia eliminar todo el historial", async () => {
+
+        const histories = await History.findAll({
+            include: [Operation]
+        })
+
+        if (histories.length > 0){
+
+            await deleteAllHistory()
+            
+            expect(histories.length).toEqual(0);
+        } 
+    
+    });
+
 })
