@@ -111,3 +111,18 @@ describe("API square root", () => {
             })
     })
 })
+
+describe("API binary", () => {
+    test("Deberia responder con un 200 ok", async() => {
+        const app = await api.build()
+
+        return request(app)
+            .get('/api/v1/bin/2')
+            .expect(200)
+            .expect('Content-Type', "application/json; charset=utf-8")
+            .then((res) => {
+
+                expect(res.body.result).toBe('10');
+            })
+    })
+})
