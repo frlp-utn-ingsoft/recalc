@@ -10,6 +10,7 @@ export async function seed() {
         { name: "DIV" },
         { name: "POW" },
         { name: "SQR" },
+        { name: "BIN" },
     ])
 }
 
