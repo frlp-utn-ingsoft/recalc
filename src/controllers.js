@@ -100,5 +100,18 @@ router.get("/sqr/:a", async function(req, res) {
     }
 });
 
+router.get("/bin/:a", async function(req, res) {
+    const params = req.params;
+    const a = Number(params.a);
+
+    if (isNaN(a)) {
+        res.status(400).send('El parámetro no es un número');
+    } else {
+        const result = core.bin(a);
+
+        await createHistoryEntry({ firstArg: a, secondArg: null, result, operationName: "BIN" })
+        return res.send({ result });
+    }
+});
 
 export default router;
