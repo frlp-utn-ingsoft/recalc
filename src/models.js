@@ -10,15 +10,15 @@ const sequelize = new Sequelize({
 
 export const History = sequelize.define('History', {
     firstArg: {
-        type: DataTypes.NUMBER,
+        type: DataTypes.FLOAT,
         allowNull: false
     },
     secondArg: {
-        type: DataTypes.NUMBER,
+        type: DataTypes.FLOAT,
         allowNull: true
     },
     result: {
-        type: DataTypes.NUMBER,
+        type: DataTypes.FLOAT,
         allowNull: true
     }
 });
@@ -42,6 +42,7 @@ export async function createHistoryEntry({ firstArg, secondArg, operationName, r
 
     return History.create({
         firstArg,
+        secondArg,
         result,
         OperationId: operation.id
     })
