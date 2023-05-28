@@ -55,6 +55,12 @@ router.get("/div/:a/:b", async function (req, res) {
       .send({error: "Los parámetros no son válidos para la división"});
   } else {
     const result = core.div(a, b);
+    await createHistoryEntry({
+      firstArg: a,
+      secondArg: b,
+      result,
+      operationName: "DIV",
+    });
     return res.send({resultado: result});
   }
 });
