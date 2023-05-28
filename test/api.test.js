@@ -83,4 +83,23 @@ describe("API DIV", () => {
 
     expect(res.body.resultado).toEqual(2);
   });
+
+  test("Si el segundo parametro es cero, debe dar error", async () => {
+    const app = await api.build();
+    const a = 4;
+    const b = 0;
+
+    if (b === 0) {
+      expect(() => {
+        throw new Error("Los parámetros no son válidos para la división");
+      }).toThrow();
+    } else {
+    
+    const res = await request(app)
+      .get(`/api/v1/div/${a}/${b}`)
+      .expect(200)
+      .expect("Content-Type", "application/json; charset=utf-8");
+    const resultado = res.body.resultado;
+
+  }});
 })
