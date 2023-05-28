@@ -55,6 +55,12 @@ router.get("/div/:a/:b", async function (req, res) {
       .send({error: "Los parámetros no son válidos para la división"});
   } else {
     const result = core.div(a, b);
+    await createHistoryEntry({
+      firstArg: a,
+      secondArg: b,
+      result,
+      operationName: "DIV",
+    });
     return res.send({resultado: result});
   }
 });
@@ -98,6 +104,16 @@ router.get("/pow/:a/:b", async function (req, res) {
 router.get("/all", async function (req, res) {
   const historial = await getHistorial();
   return res.send({historial});
+});
+
+router.get("/delete-all", async function (req, res) {
+  try {
+    await deleteHistorial(); // Llamada a la función para eliminar todo el historial
+    return res.send("Historial eliminado correctamente");
+  } catch (error) {
+    console.error("Error al eliminar el historial:", error);
+    return res.status(500).send("Error al eliminar el historial");
+  }
 });
 
 export default router;

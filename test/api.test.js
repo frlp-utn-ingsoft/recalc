@@ -83,6 +83,7 @@ describe("API DIV", () => {
 
     expect(res.body.resultado).toEqual(2);
   });
+<<<<<<< HEAD
 
   test("Si el segundo parametro es cero, debe dar error", async () => {
     const app = await api.build();
@@ -103,3 +104,6 @@ describe("API DIV", () => {
 
   }});
 })
+=======
+})
+>>>>>>> dev
