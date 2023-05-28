@@ -70,4 +70,28 @@ describe("History", () => {
     expect(histories[1].secondArg).toEqual(1);
     expect(histories[1].result).toEqual(8);
   });
+
+  test("Debería borrar todo el historial", async () => {
+    const entry = {
+      firstArg: 6,
+      secondArg: 2,
+      result: 4,
+      operationName: "SUB",
+    };
+    const entry2 = {
+      firstArg: 9,
+      secondArg: 1,
+      result: 8,
+      operationName: "SUB",
+    };
+    await createHistoryEntry(entry);
+    await createHistoryEntry(entry2);
+  
+    await History.destroy({ where: {} });
+  
+    const histories = await History.findAll();
+  
+    expect(histories.length).toEqual(0);
+  });
+  
 });
