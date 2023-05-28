@@ -57,6 +57,13 @@ export async function getHistorial() {
   return History.findAll();
 }
 
+export async function deleteHistorial() {
+  await History.destroy({
+    where: {},
+    truncate: true
+  });
+}
+
 export function createTables() {
   return Promise.all([
     History.sync({force: true}),
