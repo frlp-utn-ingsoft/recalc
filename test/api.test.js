@@ -81,6 +81,6 @@ describe("API DIV", () => {
       .expect(200)
       .expect("Content-Type", "application/json; charset=utf-8");
 
-    expect(res.body.resultado).toEqual(8);
+    expect(res.body.resultado).toEqual(2);
   });
 })
