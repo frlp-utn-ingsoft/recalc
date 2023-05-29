@@ -1,0 +1,12 @@
+data
+node_modules
+coverage
+Dockerfile
+test
+README.md
+npm-debug.log
+nginx.conf
+.gitignore
+.git
+.github
+.env
