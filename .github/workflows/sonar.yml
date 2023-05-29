@@ -4,6 +4,8 @@ on: [push, pull_request]
 
 
 jobs:
+  runs:
+    using: 'node16'
   build:
     name: sonar
     runs-on: ubuntu-latest
