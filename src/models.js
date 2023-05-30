@@ -15,7 +15,7 @@ export const History = sequelize.define('History', {
     },
     secondArg: {
         type: DataTypes.NUMBER,
-        allowNull: true
+        allowNull: false
     },
     result: {
         type: DataTypes.NUMBER,
@@ -42,6 +42,7 @@ export async function createHistoryEntry({ firstArg, secondArg, operationName, r
 
     return History.create({
         firstArg,
+        secondArg,
         result,
         OperationId: operation.id
     })
