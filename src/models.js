@@ -53,3 +53,16 @@ export function createTables() {
         Operation.sync({ force: true })
     ]);
 }
+
+export function getHistory() {
+    return new Promise((resolve, reject) => {
+  
+      History.findAll()
+        .then(rows => {
+          resolve(rows);
+        })
+        .catch(error => {
+          reject(error);
+        });
+    });
+  }
