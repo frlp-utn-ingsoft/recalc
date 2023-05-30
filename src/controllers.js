@@ -56,7 +56,7 @@ router.get("/add/:a/:b", async function (req, res) {
         res.status(400).send('Uno de los parámetros no es un número');
     } else {
         const result = core.add(a, b);
-        
+
         await createHistoryEntry({ firstArg: a, secondArg: b, operationName: "ADD", result: result })
         return res.send({ result });
     }
@@ -71,6 +71,8 @@ router.get("/multiply/:a/:b", async function (req, res) {
         res.status(400).send('Uno de los parámetros no es un número');
     } else {
         const result = core.mul(a, b);
+
+        await createHistoryEntry({ firstArg: a, secondArg: b, operationName: "MUL", result: result })
         return res.send({ result });
     }
 });
