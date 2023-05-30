@@ -2,6 +2,7 @@ import express from 'express';
 import core from './core.js';
 
 import { createHistoryEntry } from './models.js'
+import { getHistory } from './models.js';
 
 const router = express.Router();
 
@@ -70,6 +71,17 @@ router.get("/mul/:a/:b", async function (req, res) {
         return res.send({ result });
     }
 });
+
+router.get("/history", async function(req, res) {
+    try {
+      const history = await getHistory();
+  
+      res.status(200).json(history);
+    } catch (error) {
+      res.status(500).json({ error: "Ocurrió un error al intentar acceder al historial" });
+    }
+  });
+  
 
 export default router;
 
