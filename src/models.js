@@ -20,6 +20,10 @@ export const History = sequelize.define('History', {
     result: {
         type: DataTypes.NUMBER,
         allowNull: true
+    },
+    error: {
+        type: DataTypes.STRING,
+        allowNull: true,
     }
 });
 
