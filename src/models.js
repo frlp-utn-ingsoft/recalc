@@ -53,3 +53,9 @@ export function createTables() {
         Operation.sync({ force: true })
     ]);
 }
+
+export async function eraseHistory({}){
+    await History.destroy({
+        truncate: true
+    })
+}
