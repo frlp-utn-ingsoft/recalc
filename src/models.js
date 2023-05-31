@@ -22,7 +22,7 @@ export const History = sequelize.define('History', {
         allowNull: true
     },
     error: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
     }
 });
