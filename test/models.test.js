@@ -2,6 +2,7 @@ const { seed } = require('../src/seed.js')
 const {
     createHistoryEntry,
     History,
+    eraseHistory,
     Operation
 } = require('../src/models.js')
 
@@ -62,5 +63,21 @@ describe("History", () => {
         expect(histories[0].result).toEqual(2)
         expect(histories[0].Operation.name).toEqual("SUB")
     })
-})
 
+
+    test("deberia poder eliminar el historial", async () => {
+
+        await createHistoryEntry({
+            firstArg: 2,
+            secondArg: 2,
+            result: 0,
+            operationName: "SUB"
+        })
+
+        await eraseHistory({})
+
+        const histories = await History.findAll({})
+
+        expect(histories.length).toEqual(0)
+    })
+})
