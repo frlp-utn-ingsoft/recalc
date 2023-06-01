@@ -72,34 +72,28 @@ describe("API MUL", () => {
   });
 });
 
-describe("API DIV", () => {
+describe("API pow", () => {
   test("Deberia responder con un 200 ok", async () => {
     const app = await api.build();
 
     const res = await request(app)
-      .get("/api/v1/div/4/2")
-      .expect(200)
+      .get("/api/v1/pow/4/2")
+      .expect(400)
       .expect("Content-Type", "application/json; charset=utf-8");
 
-    expect(res.body.resultado).toEqual(2);
+    expect(res.body.resultado).toEqual(16);
   });
 
-  test("Si el segundo parametro es cero, debe dar error", async () => {
+  test("Si uno de los parametros es string debería dar error", async () => {
     const app = await api.build();
     const a = 4;
-    const b = 0;
-
-    if (b === 0) {
-      expect(() => {
-        throw new Error("Los parámetros no son válidos para la división");
-      }).toThrow();
-    } else {
-    
+    const b = "string"; // Un parámetro como una cadena
+  
     const res = await request(app)
-      .get(`/api/v1/div/${a}/${b}`)
-      .expect(200)
+      .get(`/api/v1/pow/${a}/${b}`)
+      .expect(400)
       .expect("Content-Type", "application/json; charset=utf-8");
-    const resultado = res.body.resultado;
-
-  }});
+  
+    expect(res.body.error).toBe("Los parámetros no son válidos para la potencia");
+  });
 })

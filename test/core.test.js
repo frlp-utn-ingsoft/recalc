@@ -81,4 +81,5 @@ describe("Prueba de la funcion potencia", () => {
   test("-4^ 2 debe ser igual a 16", () => {
     expect(core.pow(-4, 2)).toBe(16);
   });
-});
+
+  });
