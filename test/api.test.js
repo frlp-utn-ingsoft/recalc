@@ -34,3 +34,18 @@ describe("API add", () => {
         
     });
 })
+
+describe("API multiply", () => {
+    test("Deberia responder con un 200 ok", async () => {
+        const app = await api.build()
+
+        request(app).get('/api/v1/mul/2.5/5.5')
+            .expect(200)
+            .expect('Content-Type', "application/json; charset=utf-8")
+            .end((err, res) => {
+                if (err) throw err
+
+                expect(res.body.result).toEqual(13.75);
+            })
+    })
+})
