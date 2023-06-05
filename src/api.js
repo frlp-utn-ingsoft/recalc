@@ -6,6 +6,8 @@ import controllers from './controllers.js';
 
 const publicPath = path.join('src', 'public')
 
+let unused;
+
 export async function build() {
     const app = express();
 
