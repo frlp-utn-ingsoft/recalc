@@ -33,6 +33,19 @@ describe("History", () => {
 
 describe("History", () => {
     test("Deberia poder eliminar el historial de la base de datos", async() => {
+        await createHistoryEntry({
+            firstArg: 5,
+            secondArg: 2,
+            result: 3,
+            operationName: "SUB",
+        });
+        await createHistoryEntry({
+            firstArg: 7,
+            secondArg: 1,
+            result: 6,
+            operationName: "ADD",
+        });
+
         await deleteFullHistory();
         const histories = await History.findAll();
         expect(histories.length).toEqual(0);
