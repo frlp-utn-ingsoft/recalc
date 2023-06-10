@@ -2,8 +2,10 @@ const { seed } = require('../src/seed.js')
 const {
     createHistoryEntry,
     deleteFullHistory,
+    obtenerHistorialBaseDatos,
     History,
     Operation
+  
 } = require('../src/models.js')
 
 beforeEach(async() => {
@@ -16,6 +18,7 @@ describe("History", () => {
             firstArg: 2,
             secondArg: 2,
             result: 0,
+	    error: "",
             operationName: "SUB"
         })
 
@@ -26,6 +29,7 @@ describe("History", () => {
         expect(histories.length).toEqual(1)
         expect(histories[0].firstArg).toEqual(2)
         expect(histories[0].result).toEqual(0)
+      expect(histories[0].error).toEqual("")
         expect(histories[0].Operation.name).toEqual("SUB")
     })
 })
@@ -51,3 +55,30 @@ describe("History", () => {
         expect(histories.length).toEqual(0);
     });
 });
+
+ describe("History", () => {
+    test("Deberia poder mostrar el historial de la bbdd", async () => {
+        
+        const History = await obtenerHistorialBaseDatos();
+
+        expect(History).toBeDefined(); // Verificar que se haya obtenido algún resultado
+        expect(Array.isArray(History)).toBe(true); // Verificar que el historial sea un arreglo
+    });
+}); 
+
+describe("History", () => {
+    test("Deberia poder guardar el segundo parámetro en el history", async () => {
+        await createHistoryEntry({
+            firstArg: 5,
+            secondArg: 7,
+            result: 12,
+            operationName: "ADD"
+        })
+
+        const histories = await History.findAll({
+            include: [Operation]
+        })
+
+        expect(histories[0].secondArg).toEqual(7)
+    })
+})
