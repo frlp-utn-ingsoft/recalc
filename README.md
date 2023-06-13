@@ -1,4 +1,4 @@
-# ReCalc v1.2.0
+# ReCalc v1.3.2
 
 Calculadora con funciones simples.
 

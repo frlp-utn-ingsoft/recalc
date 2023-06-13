@@ -14,9 +14,7 @@ router.get("/sub/:a/:b", async function(req, res) {
         res.status(400).send('Uno de los parámetros no es un número');
     } else {
         const result = core.sub(a, b);
-
         await createHistoryEntry({ firstArg: a, secondArg: b, result, operationName: "SUB" })
-
         return res.send({ result });
     }
 });
