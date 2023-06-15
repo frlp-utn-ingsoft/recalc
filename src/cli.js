@@ -23,7 +23,7 @@ async function loop() {
 
     const fn = core[fnName];
 
-    if (fnName == "sqr" || fnName == "bin"){
+    if (fnName === "sqr" || fnName === "bin"){
         const firstNum = await readline.question("Ingrese el número: ")
 
         if(!isNaN(firstNum)){
