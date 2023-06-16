@@ -1,7 +1,7 @@
 const $display = document.querySelector('.display')
 const $buttons = document.querySelector('.buttons')
 
-const operations = ['-', '*', '+'];
+const operations = ['-', '*', '+', '/'];
 
 let currentDisplay = "";
 let operation = null;
@@ -29,6 +29,12 @@ $buttons.addEventListener('click', async (e) => {
             result = await calculateMul(firstArg, secondArg)
         }
 
+        if (operation === "/") {
+            if (parseInt(secondArg) === 0) {
+                result = "Math ERROR"
+            } else { result = await calculateDiv(firstArg, secondArg) }
+        }
+
 
         reset = true;
         return renderDisplay(result);
@@ -46,6 +52,12 @@ $buttons.addEventListener('click', async (e) => {
         renderDisplay(currentDisplay + nextAction);
     }
 })
+async function calculateDiv(firstArg, secondArg) {
+    const resp = await fetch(`/api/v1/div/${firstArg}/${secondArg}`)
+    const { result } = await resp.json();
+
+    return result;
+}
 
 async function calculateSub(firstArg, secondArg) {
     const resp = await fetch(`/api/v1/sub/${firstArg}/${secondArg}`)
@@ -67,7 +79,6 @@ async function calculateMul(firstArg, secondArg) {
 
     return result;
 }
-
 
 function renderDisplay(chars) {
     currentDisplay = chars;
