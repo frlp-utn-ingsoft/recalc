@@ -115,4 +115,35 @@ test.describe('test', () => {
     expect(historyEntry.result).toEqual(60)
   });
 
+  test('Deberia poder realizar una raíz cuadrada', async ({ page }) => {
+    await page.goto('./');
+
+    await page.getByRole('button', { name: '2' }).click()
+    await page.getByRole('button', { name: '5' }).click()
+    await page.getByRole('button', { name: '√' }).click()
+
+    const [response] = await Promise.all([
+      page.waitForResponse((r) => r.url().includes('/api/v1/sqr/')),
+    ]);
+
+    const { result } = await response.json();
+    expect(result).toBe(5);
+
+    await expect(page.getByTestId('display')).toHaveValue(/5/)
+
+    const operation = await Operation.findOne({
+      where: {
+        name: "SQR"
+      }
+    });
+
+    const historyEntry = await History.findOne({
+      where: { OperationId: operation.id }
+    })
+
+    expect(historyEntry.firstArg).toEqual(25)
+    expect(historyEntry.secondArg).toEqual(null)
+    expect(historyEntry.result).toEqual(5)
+  });
+
 })
