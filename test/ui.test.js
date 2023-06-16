@@ -82,6 +82,15 @@ test.describe('test', () => {
     expect(historyEntry.result).toEqual(60)
   });
 
+  test('No debería mostrar “undefined” cuando se hace click en el botón “=”', async ({ page }) => {
+    await page.goto('./');
+  
+    await page.getByRole('button', { name: '=' }).click();
+
+    //Verifica que el display esté vacío  
+    await expect(page.getByTestId('display')).toBeEmpty();
+  });
+
   test('Deberia poder realizar una multiplicacion', async ({ page }) => {
     await page.goto('./');
 
