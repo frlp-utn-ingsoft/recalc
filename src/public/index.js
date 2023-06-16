@@ -34,6 +34,13 @@ $buttons.addEventListener('click', async (e) => {
         return renderDisplay(result);
     }
 
+    if (nextAction === "√") {
+        if (currentDisplay !== "") {
+            result = await calculateSqr(currentDisplay);
+            return renderDisplay(result);
+        }
+    }
+
     if (operations.includes(nextAction)) {
         operation = nextAction;
     }
@@ -68,6 +75,12 @@ async function calculateMul(firstArg, secondArg) {
     return result;
 }
 
+async function calculateSqr(firstArg) {
+    const resp = await fetch(`/api/v1/sqr/${firstArg}`)
+    const { result } = await resp.json();
+
+    return result;
+}
 
 function renderDisplay(chars) {
     currentDisplay = chars;
