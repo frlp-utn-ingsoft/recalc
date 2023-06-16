@@ -13,6 +13,12 @@ $buttons.addEventListener('click', async (e) => {
     const nextAction = e.target.name
 
     if (nextAction === "=") {
+
+        //Verificar si currentDisplay está vacío
+        if (currentDisplay === "") {
+            return;
+        }
+        
         const [firstArg, secondArg] = currentDisplay.split(operation)
 
         let result;
