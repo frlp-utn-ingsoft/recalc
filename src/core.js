@@ -16,10 +16,8 @@ function divide(a, b) {
 
 	return "No se puede dividir por cero";
     }
-    else{
 
 	return a / b;
-    }
 }
 
 function pow(a, b) {
