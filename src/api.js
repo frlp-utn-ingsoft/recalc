@@ -5,7 +5,7 @@ import bodyParser from 'body-parser';
 import controllers from './controllers.js';
 
 const publicPath = path.join('src', 'public')
-
+    //eslint-disable-next-line no-unused-vars
 let unused;
 
 export async function build() {
@@ -17,8 +17,6 @@ export async function build() {
     app.get('/', (req, res) => {
         res.sendFile(path.resolve(publicPath, 'index.html'))
     })
-
-    let nousada = 20;
 
     app.use("/api/v1", controllers);
 
