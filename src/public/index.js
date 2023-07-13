@@ -54,6 +54,7 @@ $buttons.addEventListener('click', async(e) => {
 
     if (nextAction === "√") {
         if (currentDisplay !== "") {
+            let result;
             result = await calculateSqr(currentDisplay);
             return renderDisplay(result);
         }
