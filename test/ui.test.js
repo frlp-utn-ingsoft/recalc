@@ -48,6 +48,24 @@ test.describe('test', () => {
         expect(historyEntry.result).toEqual(2)
     });
 
+    test('Deberia arrojar un error al dividir por cero', async({ page }) => {
+        await page.goto('./');
+
+        await page.getByRole('button', { name: '5' }).click()
+        await page.getByRole('button', { name: '/' }).click()
+        await page.getByRole('button', { name: '0' }).click()
+
+        const [response] = await Promise.all([
+            page.waitForResponse((r) => r.url().includes('/api/v1/div/')),
+            page.getByRole('button', { name: '=' }).click()
+        ]);
+
+        const { error } = await response.json();
+        expect(error).toBe("No se puede dividir por cero");
+
+        await expect(page.getByTestId('display')).toHaveValue("No se puede dividir por cero")
+
+    });
 
     test('Deberia poder realizar una resta', async({ page }) => {
         await page.goto('./');

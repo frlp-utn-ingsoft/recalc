@@ -36,9 +36,7 @@ $buttons.addEventListener('click', async(e) => {
         }
 
         if (operation === "/") {
-            if (parseInt(secondArg) === 0) {
-                result = "Math ERROR"
-            } else { result = await calculateDiv(firstArg, secondArg) }
+            result = await calculateDiv(firstArg, secondArg)
         }
 
         if (operation === "^") {
@@ -72,9 +70,14 @@ $buttons.addEventListener('click', async(e) => {
         renderDisplay(currentDisplay + nextAction);
     }
 })
+
 async function calculateDiv(firstArg, secondArg) {
     const resp = await fetch(`/api/v1/div/${firstArg}/${secondArg}`)
-    const { result } = await resp.json();
+    const { result, error } = await resp.json();
+
+   if (error) {
+	return error
+   }
 
     return result;
 }
