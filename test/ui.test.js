@@ -207,6 +207,26 @@ test.describe('test', () => {
         expect(historyEntry.secondArg).toEqual(2)
         expect(historyEntry.result).toEqual(4)
     });
+    test('Deberia arrojar un error al obtener un resultado mayor a 100.000', async({ page }) => {
+        await page.goto('./');
+
+        await page.getByRole('button', { name: '5' }).click()
+        await page.getByRole('button', { name: '5' }).click()
+        await page.getByRole('button', { name: '^' }).click()
+        await page.getByRole('button', { name: '5' }).click()
+
+
+        const [response] = await Promise.all([
+            page.waitForResponse((r) => r.url().includes('/api/v1/pow/')),
+            page.getByRole('button', { name: '=' }).click()
+        ]);
+
+        const { error } = await response.json();
+        expect(error).toBe(undefined);
+
+
+    });
+
 
     test('Deberia poder realizar una raíz cuadrada', async({ page }) => {
         await page.goto('./');

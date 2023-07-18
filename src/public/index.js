@@ -75,9 +75,9 @@ async function calculateDiv(firstArg, secondArg) {
     const resp = await fetch(`/api/v1/div/${firstArg}/${secondArg}`)
     const { result, error } = await resp.json();
 
-   if (error) {
-	return error
-   }
+    if (error) {
+        return error
+    }
 
     return result;
 }
@@ -112,12 +112,14 @@ async function calculateSqr(firstArg) {
 
 async function calculatePow(firstArg, secondArg) {
     const resp = await fetch(`/api/v1/pow/${firstArg}/${secondArg}`)
+    const { result, error } = await resp.json();
 
-    const { result } = await resp.json();
+    if (error) {
+        return error
+    }
 
     return result;
 }
-
 
 function renderDisplay(chars) {
     currentDisplay = chars;
