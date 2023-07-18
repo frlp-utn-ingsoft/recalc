@@ -82,13 +82,9 @@ router.get("/pow/:a/:b", async function(req, res) {
         await createHistoryEntry({ firstArg: a, secondArg: b, result, operationName: "POW" })
         return res.send({ result });
     }
-    if (result > 100000) {
+    if (res > 100000) {
         return res.status(400).send({ "error": 'No se puede obtener un resultado mayor a 100.000' });
     }
-
-    const result = core.pow(a, b);
-    await createHistoryEntry({ firstArg: a, secondArg: b, result, operationName: "POW" })
-    return res.send({ result });
 });
 
 
