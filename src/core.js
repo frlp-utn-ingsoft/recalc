@@ -12,15 +12,20 @@ function multiply(a, b) {
 
 function divide(a, b) {
 
-    if ( b === 0 ) {
+    if (b === 0) {
 
-	return "No se puede dividir por cero";
+        return "No se puede dividir por cero";
     }
 
-	return a / b;
+    return a / b;
 }
 
 function pow(a, b) {
+    if (res > 100000) {
+
+        return "No se puede obtener un resultado tan grande";
+    }
+
     return a ** b;
 }
 

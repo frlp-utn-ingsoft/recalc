@@ -71,6 +71,10 @@ describe('Add', () => {
 })
 
 describe('Pow', () => {
+    test('Deberia 55 ^ 5 = Error', () => {
+        expect(core.div(55, 5)).toBe("No se puede obtener un resultado tan grande");
+    })
+
     test('Deberia -1 ** 2 = 1', () => {
         expect(core.pow(-1, 2)).toBe(1);
     })
