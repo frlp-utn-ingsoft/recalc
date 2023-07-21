@@ -179,7 +179,7 @@ test.describe('test', () => {
     test('Deberia poder realizar una potencia', async({ page }) => {
         await page.goto('./');
 
-        await page.getByRole('button', { name: '2' }).click()
+        await page.getByRole('button', { name: '6' }).click()
         await page.getByRole('button', { name: '^' }).click()
         await page.getByRole('button', { name: '2' }).click()
 
@@ -189,9 +189,9 @@ test.describe('test', () => {
         ]);
 
         const { result } = await response.json();
-        expect(result).toBe(4);
+        expect(result).toBe(36);
 
-        await expect(page.getByTestId('display')).toHaveValue(/4/)
+        await expect(page.getByTestId('display')).toHaveValue(/36/)
 
         const operation = await Operation.findOne({
             where: {
@@ -203,10 +203,31 @@ test.describe('test', () => {
             where: { OperationId: operation.id }
         })
 
-        expect(historyEntry.firstArg).toEqual(2)
+        expect(historyEntry.firstArg).toEqual(6)
         expect(historyEntry.secondArg).toEqual(2)
-        expect(historyEntry.result).toEqual(4)
+        expect(historyEntry.result).toEqual(36)
     });
+
+    test('Deberia arrojar un error al obtener un resultado mayor a 100.000', async({ page }) => {
+        await page.goto('./');
+
+        await page.getByRole('button', { name: '5' }).click()
+        await page.getByRole('button', { name: '5' }).click()
+        await page.getByRole('button', { name: '^' }).click()
+        await page.getByRole('button', { name: '5' }).click()
+
+        const [response] = await Promise.all([
+            page.waitForResponse((r) => r.url().includes('/api/v1/pow/')),
+            page.getByRole('button', { name: '=' }).click()
+        ]);
+
+        const { error } = await response.json();
+        expect(error).toBe("No se puede obtener un resultado tan grande");
+
+        await expect(page.getByTestId('display')).toHaveValue("No se puede obtener un resultado tan grande")
+
+    });
+
 
     test('Deberia poder realizar una raíz cuadrada', async({ page }) => {
         await page.goto('./');

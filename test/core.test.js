@@ -71,6 +71,7 @@ describe('Add', () => {
 })
 
 describe('Pow', () => {
+
     test('Deberia -1 ** 2 = 1', () => {
         expect(core.pow(-1, 2)).toBe(1);
     })
@@ -81,7 +82,7 @@ describe('Pow', () => {
     test('Deberia 10 ** 0 = 1', () => {
         expect(core.pow(10, 0)).toBe(1);
     })
-    test('Deberia 0 ** 3 = -8', () => {
+    test('Deberia 0 ** 3 = 0', () => {
         expect(core.pow(0, 3)).toBe(0);
     })
 })

@@ -28,10 +28,10 @@ router.get("/div/:a/:b", async function(req, res) {
     if (isNaN(a) || isNaN(b)) {
         res.status(400).send('Uno de los parámetros No es un numero');
     }
-    
+
     if (b === 0) {
         return res.status(400).send({ "error": 'No se puede dividir por cero' });
-	}
+    }
 
     const result = core.div(a, b);
     await createHistoryEntry({ firstArg: a, secondArg: b, result, operationName: "DIV" })
@@ -76,12 +76,17 @@ router.get("/pow/:a/:b", async function(req, res) {
     const b = Number(params.b);
 
     if (isNaN(a) || isNaN(b)) {
-        res.status(400).send({ "error": 'Uno de los parámetros no es un número' });
-    } else {
-        const result = core.pow(a, b);
-        await createHistoryEntry({ firstArg: a, secondArg: b, result, operationName: "POW" })
-        return res.send({ result });
+        res.status(400).send('Uno de los parámetros No es un numero');
     }
+
+    const result = core.pow(a, b);
+
+    if (result > 100000) {
+        return res.status(400).send({ "error": 'No se puede obtener un resultado tan grande' });
+    }
+
+    await createHistoryEntry({ firstArg: a, secondArg: b, result, operationName: "POW" })
+    return res.send({ result });
 });
 
 

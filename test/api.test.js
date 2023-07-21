@@ -88,12 +88,13 @@ describe("API pow", () => {
         const app = await api.build()
 
         return request(app)
-            .get('/api/v1/pow/a/b')
+            .get('/api/v1/pow/55/5')
             .expect(400)
             .expect('Content-Type', "application/json; charset=utf-8")
             .then((res) => {
-                expect(res.body.error).toEqual("Uno de los parámetros no es un número");
-            });
+                expect(res.body.error).toEqual("No se puede obtener un resultado tan grande")
+            })
+
     })
 })
 
