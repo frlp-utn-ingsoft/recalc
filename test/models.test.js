@@ -34,7 +34,7 @@ describe("History", () => {
 })
 
 describe("History", () => {
-    test("Deberia utilizar el nuevo campo de error al intentar dividir por cero", async () => {
+    test("Deberia utilizar el nuevo campo de error al intentar dividir por cero", async() => {
         await createHistoryEntry({
             firstArg: 4,
             secondArg: 0,
@@ -52,6 +52,28 @@ describe("History", () => {
         expect(histories[0].result).toEqual(null)
         expect(histories[0].error).toEqual("No se puede dividir por cero")
         expect(histories[0].Operation.name).toEqual("DIV")
+    })
+})
+
+describe("History", () => {
+    test("Deberia utilizar el nuevo campo de error al obtener un resultado mayor a 100000", async() => {
+        await createHistoryEntry({
+            firstArg: 55,
+            secondArg: 5,
+            result: null,
+            error: "No se puede obtener un resultado tan grande",
+            operationName: "POW"
+        })
+
+        const histories = await History.findAll({
+            include: [Operation]
+        })
+
+        expect(histories.length).toEqual(1)
+        expect(histories[0].firstArg).toEqual(55)
+        expect(histories[0].result).toEqual(null)
+        expect(histories[0].error).toEqual("No se puede obtener un resultado tan grande")
+        expect(histories[0].Operation.name).toEqual("POW")
     })
 })
 
@@ -77,8 +99,8 @@ describe("History", () => {
     });
 });
 
- describe("History", () => {
-    test("Deberia poder mostrar el historial de la bbdd", async () => {
+describe("History", () => {
+    test("Deberia poder mostrar el historial de la bbdd", async() => {
 
         const History = await obtenerHistorialBaseDatos();
 
@@ -88,7 +110,7 @@ describe("History", () => {
 });
 
 describe("History", () => {
-    test("Deberia poder guardar el segundo parámetro en el history", async () => {
+    test("Deberia poder guardar el segundo parámetro en el history", async() => {
         await createHistoryEntry({
             firstArg: 5,
             secondArg: 7,

@@ -92,7 +92,7 @@ describe("API pow", () => {
             .expect(400)
             .expect('Content-Type', "application/json; charset=utf-8")
             .then((res) => {
-                expect(res.body.error).toEqual("El resultado no puede ser mayor a 100.000")
+                expect(res.body.error).toEqual("No se puede obtener un resultado tan grande")
             })
 
     })

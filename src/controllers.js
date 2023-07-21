@@ -81,7 +81,7 @@ router.get("/pow/:a/:b", async function(req, res) {
 
     const result = core.pow(a, b);
 
-    if (res > 100000) {
+    if (result > 100000) {
         return res.status(400).send({ "error": 'No se puede obtener un resultado tan grande' });
     }
 

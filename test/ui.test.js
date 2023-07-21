@@ -222,9 +222,9 @@ test.describe('test', () => {
         ]);
 
         const { error } = await response.json();
-        expect(error).toBe("El resultado no puede ser mayor a 100.000");
+        expect(error).toBe("No se puede obtener un resultado tan grande");
 
-        await expect(page.getByTestId('display')).toHaveValue("El resultado no puede ser mayor a 100.000")
+        await expect(page.getByTestId('display')).toHaveValue("No se puede obtener un resultado tan grande")
 
     });
 

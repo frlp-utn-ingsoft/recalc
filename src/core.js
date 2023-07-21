@@ -21,10 +21,6 @@ function divide(a, b) {
 }
 
 function pow(a, b) {
-    if (res > 100000) {
-
-        return "No se puede obtener un resultado tan grande";
-    }
 
     return a ** b;
 }
